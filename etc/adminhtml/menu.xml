@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+		<!-- First Menu -->
+
+		
+			<add id="Bsitc_Brightpearl::menu_1" title="BrightPearl" module="Bsitc_Brightpearl" sortOrder="100" resource="Bsitc_Brightpearl::parent"/>
+		 
+		 
+			<add id="Bsitc_Brightpearl::menu_2" title="1. BP Configuration" module="Bsitc_Brightpearl" sortOrder="1000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+				 
+					<add id="Bsitc_Brightpearl::setting" title="Configuration" module="Bsitc_Brightpearl" sortOrder="350" parent="Bsitc_Brightpearl::menu_2" action="adminhtml/system_config/edit/section/bpconfiguration" resource="Bsitc_Brightpearl::bpconfiguration"/>
+					
+					<!--
+					
+					<add id="Bsitc_Brightpearl::index" title="Dashboard" module="Bsitc_Brightpearl" sortOrder="360" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/index" resource="Bsitc_Brightpearl::index"/>
+					
+					<add id="Bsitc_Brightpearl::transit" title="Import Transit Time Mapping" module="Bsitc_Brightpearl" sortOrder="600" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/index/transit" resource="Bsitc_Brightpearl::index_transit"/>
+					
+					<add id="Bsitc_Brightpearl::shippingmap" title="Import MGT BP Shipping Mapping" module="Bsitc_Brightpearl" sortOrder="600" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/index/shippingmap" resource="Bsitc_Brightpearl::index_shippingmap"/>
+					
+					-->
+					
+					<add id="Bsitc_Brightpearl::Bpitems" title="Bp Skus" module="Bsitc_Brightpearl" sortOrder="380" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/bpitems" resource="Bsitc_Brightpearl::bpitems"/>
+					
+					<add id="Bsitc_Brightpearl::fullstocksyn" title="Bp Full Stock Synchronize" module="Bsitc_Brightpearl" sortOrder="390" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/fullstocksyn" resource="Bsitc_Brightpearl::fullstocksyn"/>
+					
+
+					<add id="Bsitc_Brightpearl::thirdpartyorders" title="Third Party Orders" module="Bsitc_Brightpearl" sortOrder="400" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/thirdpartyorders" resource="Bsitc_Brightpearl::thirdpartyorders"/>
+
+					<add id="Bsitc_Brightpearl::transitmapping" title="Transit Time Mapping" module="Bsitc_Brightpearl" sortOrder="500" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/transitmapping" resource="Bsitc_Brightpearl::transitmapping"/>
+					
+					<add id="Bsitc_Brightpearl::dmsubscriber" title="Dotmailer Subscriber" module="Bsitc_Brightpearl" sortOrder="600" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/dmsubscriber" resource="Bsitc_Brightpearl::dmsubscriber"/>
+					
+					<add id="Bsitc_Brightpearl::builderstock" title="BP Builder Stock" module="Bsitc_Brightpearl" sortOrder="620" parent="Bsitc_Brightpearl::menu_2" action="brightpearl/builderstock" resource="Bsitc_Brightpearl::builderstock"/>
+
+				
+			<add id="Bsitc_Brightpearl::menu_3" title="2. BP Reference Data Synchronization" module="Bsitc_Brightpearl" sortOrder="2000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+			 
+					<add id="Bsitc_Brightpearl::bpshipping" title="Shipping Method" module="Bsitc_Brightpearl" sortOrder="70" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/bpshipping" resource="Bsitc_Brightpearl::bpshipping"/>
+
+					<add id="Bsitc_Brightpearl::bppayment" title="Payment Method" module="Bsitc_Brightpearl" sortOrder="80" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/bppayment" resource="Bsitc_Brightpearl::bppayment"/>
+
+					<add id="Bsitc_Brightpearl::leadsource" title="Lead Source" module="Bsitc_Brightpearl" sortOrder="90" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/leadsource" resource="Bsitc_Brightpearl::leadsource"/>
+
+					<add id="Bsitc_Brightpearl::channel" title="Channel" module="Bsitc_Brightpearl" sortOrder="100" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/channel" resource="Bsitc_Brightpearl::channel"/>
+
+					<add id="Bsitc_Brightpearl::bptax" title="Tax" module="Bsitc_Brightpearl" sortOrder="115" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/bptax" resource="Bsitc_Brightpearl::bptax"/>
+
+					<add id="Bsitc_Brightpearl::nominals" title="Nominals" module="Bsitc_Brightpearl" sortOrder="120" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/nominals" resource="Bsitc_Brightpearl::nominals"/>
+
+					<add id="Bsitc_Brightpearl::tags" title="Tags" module="Bsitc_Brightpearl" sortOrder="125" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/tags" resource="Bsitc_Brightpearl::tags"/>
+					
+					<add id="Bsitc_Brightpearl::bporderstatus" title="Order Status" module="Bsitc_Brightpearl" sortOrder="50" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/bporderstatus" resource="Bsitc_Brightpearl::bporderstatus"/>
+					
+					<add id="Bsitc_Brightpearl::bpsupplier" title="Supplier" module="Bsitc_Brightpearl" sortOrder="180" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/bpsupplier" resource="Bsitc_Brightpearl::bpsupplier"/>
+					
+					<add id="Bsitc_Brightpearl::attribute" title="Configurable Attributes" module="Bsitc_Brightpearl" sortOrder="200" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/attribute" resource="Bsitc_Brightpearl::attribute"/>
+				
+					<add id="Bsitc_Brightpearl::bpcurrency" title="Currency" module="Bsitc_Brightpearl" sortOrder="210" parent="Bsitc_Brightpearl::menu_3" action="brightpearl/bpcurrency" resource="Bsitc_Brightpearl::bpcurrency"/>
+ 
+ 
+			<add id="Bsitc_Brightpearl::menu_6" title="3. BP Mapping" module="Bsitc_Brightpearl" sortOrder="3000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+				
+					<add id="Bsitc_Brightpearl::orderwarehousemap" title="Order Warehouse Mapping" module="Bsitc_Brightpearl" sortOrder="20" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/orderwarehousemap" resource="Bsitc_Brightpearl::orderwarehousemap"/>
+
+					<add id="Bsitc_Brightpearl::warehouse" title="Inventory Warehouse Mapping" module="Bsitc_Brightpearl" sortOrder="30" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/warehouse" resource="Bsitc_Brightpearl::webhooks"/>
+
+					<add id="Bsitc_Brightpearl::bppaymentmap" title="Payment Mapping" module="Bsitc_Brightpearl" sortOrder="40" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/bppaymentmap" resource="Bsitc_Brightpearl::bppaymentmap"/>
+
+					<add id="Bsitc_Brightpearl::bpshippingmap" title="Shipping Mapping" module="Bsitc_Brightpearl" sortOrder="50" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/bpshippingmap" resource="Bsitc_Brightpearl::bpshippingmap"/>
+			
+					<add id="Bsitc_Brightpearl::bpleadsourcemap" title="Lead Source Mapping" module="Bsitc_Brightpearl" sortOrder="60" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/bpleadsourcemap" resource="Bsitc_Brightpearl::bpleadsourcemap"/>
+
+					<add id="Bsitc_Brightpearl::bptaxmap" title="Tax Mapping" module="Bsitc_Brightpearl" sortOrder="70" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/bptaxmap" resource="Bsitc_Brightpearl::bptaxmap"/>
+					
+					<add id="Bsitc_Brightpearl::bppricelistmap" title="Price List Mapping" module="Bsitc_Brightpearl" sortOrder="80" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/bppricelistmap" resource="Bsitc_Brightpearl::bppricelistmap"/>
+ 				
+					<add id="Bsitc_Brightpearl::categoryleadtime" title="Category Lead Time" module="Bsitc_Brightpearl" sortOrder="90" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/categoryleadtime" resource="Bsitc_Brightpearl::categoryleadtime"/>
+
+					<add id="Bsitc_Brightpearl::skureplacement" title="SKU Replacement Mapping" module="Bsitc_Brightpearl" sortOrder="100" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/skureplacement" resource="Bsitc_Brightpearl::skureplacement"/>
+					
+					<add id="Bsitc_Brightpearl::freeproduct" title="Free Product Mapping" module="Bsitc_Brightpearl" sortOrder="110" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/freeproduct" resource="Bsitc_Brightpearl::freeproduct"/>
+
+					<add id="Bsitc_Brightpearl::swedish" title="Swedish VAT Mapping" module="Bsitc_Brightpearl" sortOrder="120" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/swedish" resource="Bsitc_Brightpearl::swedish"/>
+					
+					<add id="Bsitc_Brightpearl::splitsku" title="Split SKU Mapping" module="Bsitc_Brightpearl" sortOrder="130" parent="Bsitc_Brightpearl::menu_6" action="brightpearl/splitsku" resource="Bsitc_Brightpearl::splitsku"/>
+					
+					
+
+			<add id="Bsitc_Brightpearl::menu_7" title="4. BP Webhooks" module="Bsitc_Brightpearl" sortOrder="4000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+
+					<add id="Bsitc_Brightpearl::webhooks" title="Webhooks" module="Bsitc_Brightpearl" sortOrder="40" parent="Bsitc_Brightpearl::menu_7" action="brightpearl/webhooks" resource="Bsitc_Brightpearl::webhooks"/>
+			
+			<add id="Bsitc_Brightpearl::menu_8" title="5. BP Sales Order" module="Bsitc_Brightpearl" sortOrder="5000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+			
+					<add id="Bsitc_Brightpearl::orderqueue" title="Order Queue" module="Bsitc_Brightpearl" sortOrder="170" parent="Bsitc_Brightpearl::menu_8" action="brightpearl/orderqueue" resource="Bsitc_Brightpearl::orderqueue"/>
+				
+					<add id="Bsitc_Brightpearl::salesorderreport" title="Sent Order Report" module="Bsitc_Brightpearl" sortOrder="250" parent="Bsitc_Brightpearl::menu_8" action="brightpearl/salesorderreport" resource="Bsitc_Brightpearl::salesorderreport"/>
+			
+
+			<add id="Bsitc_Brightpearl::menu_8_5" title="6. BP Customers" module="Bsitc_Brightpearl" sortOrder="6000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+
+					<add id="Bsitc_Brightpearl::bpcustomerqueue" title="Customer Queue" module="Bsitc_Brightpearl" sortOrder="20" parent="Bsitc_Brightpearl::menu_8_5" action="brightpearl/bpcustomerqueue" resource="Bsitc_Brightpearl::bpcustomerqueue"/>
+
+					<add id="Bsitc_Brightpearl::bpcustomerreport" title="Sent Customer Report" module="Bsitc_Brightpearl" sortOrder="30" parent="Bsitc_Brightpearl::menu_8_5" action="brightpearl/bpcustomerreport" resource="Bsitc_Brightpearl::bpcustomerreport"/>
+
+
+			<add id="Bsitc_Brightpearl::menu_9" title="7. BP Purchase Orders" module="Bsitc_Brightpearl" sortOrder="7000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+
+					<add id="Bsitc_Brightpearl::bppurchaseorders" title="PO Report" module="Bsitc_Brightpearl" sortOrder="190" parent="Bsitc_Brightpearl::menu_9" action="brightpearl/bppurchaseorders" resource="Bsitc_Brightpearl::bppurchaseorders"/>
+				
+					<add id="Bsitc_Brightpearl::bporderporelation" title="Order PO Relation" module="Bsitc_Brightpearl" sortOrder="200" parent="Bsitc_Brightpearl::menu_9" action="brightpearl/bporderporelation" resource="Bsitc_Brightpearl::bporderporelation"/>
+
+
+
+
+
+			
+			<add id="Bsitc_Brightpearl::menu_10" title="8. BP Report" module="Bsitc_Brightpearl" sortOrder="8000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+			
+					<add id="Bsitc_Brightpearl::webhookupdate" title="Product Webhook Report" module="Bsitc_Brightpearl" sortOrder="10" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/webhookupdate" resource="Bsitc_Brightpearl::webhookupdate"/>
+
+					<add id="Bsitc_Brightpearl::bpproducts" title="Import Products Report" module="Bsitc_Brightpearl" sortOrder="15" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/bpproducts" resource="Bsitc_Brightpearl::bpproducts"/>
+					
+					<add id="Bsitc_Brightpearl::webhookinventory" title="Inventory Update Report" module="Bsitc_Brightpearl" sortOrder="20" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/webhookinventory" resource="Bsitc_Brightpearl::webhookinventory"/>
+					
+					<add id="Bsitc_Brightpearl::paymentcapturequeue" title="Payment Capture Queue" module="Bsitc_Brightpearl" sortOrder="55" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/paymentcapturequeue" resource="Bsitc_Brightpearl::paymentcapturequeue"/>
+					
+					<add id="Bsitc_Brightpearl::paymentcapture" title="Payment Capture Report" module="Bsitc_Brightpearl" sortOrder="60" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/paymentcapture" resource="Bsitc_Brightpearl::paymentcapture"/>
+					
+					<add id="Bsitc_Brightpearl::mgtcreditmemoqueue" title="Credit Memo Queue" module="Bsitc_Brightpearl" sortOrder="65" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/mgtcreditmemoqueue" resource="Bsitc_Brightpearl::mgtcreditmemoqueue"/>
+					
+					<add id="Bsitc_Brightpearl::mgtcreditmemo" title="Credit Memo Report" module="Bsitc_Brightpearl" sortOrder="70" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/mgtcreditmemo" resource="Bsitc_Brightpearl::mgtcreditmemo"/>
+
+					<add id="Bsitc_Brightpearl::fulfilment" title="Fulfilment Report" module="Bsitc_Brightpearl" sortOrder="80" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/fulfilment" resource="Bsitc_Brightpearl::fulfilment"/>
+					
+					<add id="Bsitc_Brightpearl::bpordercancel" title="Order Cancellation Report" module="Bsitc_Brightpearl" sortOrder="100" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/bpordercancel" resource="Bsitc_Brightpearl::bpordercancel"/>
+					
+					<add id="Bsitc_Brightpearl::bplayawaypayment" title="Layaway orders Payment Report" module="Bsitc_Brightpearl" sortOrder="120" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/bplayawaypayment" resource="Bsitc_Brightpearl::bplayawaypayment"/>
+					
+					<!--add id="Bsitc_Brightpearl::inventoryintransit" title="Inventory In Transit" module="Bsitc_Brightpearl" sortOrder="140" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/inventoryintransit" resource="Bsitc_Brightpearl::inventoryintransit"/-->
+					
+					<add id="Bsitc_Brightpearl::stocktransfer" title="Stock Transfer Report" module="Bsitc_Brightpearl" sortOrder="160" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/stocktransfer" resource="Bsitc_Brightpearl::stocktransfer"/>
+
+					<add id="Bsitc_Brightpearl::bpproductimage" title="Product Images Report" module="Bsitc_Brightpearl" sortOrder="200" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/bpproductimage" resource="Bsitc_Brightpearl::bpproductimage"/>
+					
+					<add id="Bsitc_Brightpearl::reconciliation" title="Stock Reconciliation Report" module="Bsitc_Brightpearl" sortOrder="220" parent="Bsitc_Brightpearl::menu_10" action="brightpearl/reconciliation" resource="Bsitc_Brightpearl::reconciliation"/>
+				
+ 				
+ 
+			<add id="Bsitc_Brightpearl::menu_100" title="9. BP Global Log" module="Bsitc_Brightpearl" sortOrder="9000" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+			
+					<add id="Bsitc_Brightpearl::logs" title="Logs" module="Bsitc_Brightpearl" sortOrder="300" parent="Bsitc_Brightpearl::menu_100" action="brightpearl/logs" resource="Bsitc_Brightpearl::logs"/>
+					
+					
+			<add id="Bsitc_Brightpearl::menu_110" title="10. Segmatrics Report" module="Bsitc_Brightpearl" sortOrder="9100" resource="Bsitc_Brightpearl::menu_1" parent="Bsitc_Brightpearl::menu_1" />
+								
+				<add id="Bsitc_Brightpearl::segmatricscustomers" title="Customers" module="Bsitc_Brightpearl" sortOrder="10" parent="Bsitc_Brightpearl::menu_110" action="brightpearl/segmatricscustomers" resource="Bsitc_Brightpearl::segmatricscustomers"/>
+
+				<add id="Bsitc_Brightpearl::segmatricsorders" title="Orders" module="Bsitc_Brightpearl" sortOrder="20" parent="Bsitc_Brightpearl::menu_110" action="brightpearl/segmatricsorders" resource="Bsitc_Brightpearl::segmatricsorders"/>
+
+					
+					
+
+	</menu>
+</config>

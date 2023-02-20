@@ -1,0 +1,73 @@
+<div class="wk-loading-mask wk-display-none">
+    <div class="wk-loader"></div>
+</div>
+<div style="display:none" id="product-addtocart-button-default">
+	<span><?php echo __('Add to Bag'); ?></span>
+</div>
+<?php
+    $product     	= $this->getProduct();
+    $productId     	= $this->getProduct()->getId();
+    $helper     	= $this->helper('Bsitc\Brightpearl\Helper\Mtodata');
+    $payHtml     	= $helper->getPayPreOrderHtml();
+    $msg         	= $helper->getPreOrderInfoBlock($productId);
+    $url         	= $helper->getCheckConfigUrl();
+    $po         	= $helper->_objectManager->create('\Bsitc\Brightpearl\Model\Bppurchaseorders');
+    $flag 			= 0;
+    $preorderQty 	= 0;
+    $preOrderLabel 	= __("Pre Order");
+    $mptoHtml 		= '';
+    $pType 			= '';
+
+	if ($helper->isPreorder($productId)) {
+		$flag = 1;
+		$preorderQty =  $po->getTotalRemainderQtyInPo($product->getSku());
+		$obj = $helper->_objectManager->create('Bsitc\Brightpearl\Model\Madetoorder');
+		$msg = "<div class='wk-msg-box wk-info'>".$obj->getPreOrderMsg($product).'</div>';
+		$preOrderLabel = __("Pre Order");
+		$mptoHtml = '';
+		$pType = '';
+	} elseif ($product->getIsMadetoorder()) {
+		$preOrderLabel = __("Made To Order");
+		$obj = $helper->_objectManager->create('Bsitc\Brightpearl\Model\Madetoorder');
+		$msg = $obj->getMadeToOrderMsg($product);
+		$mptoHtml = '';
+		$mptoHtml .= "<div class='wk-msg-box wk-info'>";
+		$mptoHtml .= $msg;
+		$mptoHtml .= '</div>';
+		$pType = 'mto';
+		$flag = 0;
+	} elseif ($product->getIsPrinttoorder()) {
+		$preOrderLabel = __("Print To Order");
+		$obj = $helper->_objectManager->create('Bsitc\Brightpearl\Model\Madetoorder');
+		$msg = $obj->getPrintToOrderMsg($product);
+		$mptoHtml = '';
+		$mptoHtml .= "<div class='wk-msg-box wk-info'>";
+		$mptoHtml .= $msg;
+		$mptoHtml .= '</div>';
+		$pType     = 'pto';
+		$flag = 0;
+	} else {
+		/* ---------- */
+	}
+
+    $data = [
+                "payHtml" => $payHtml,
+                "msg" => $msg,
+                "flag" => $flag,
+                "url" => $url,
+                "productId" => $productId,
+                "preOrderLabel" => $preOrderLabel,
+                "outOfStockLabel" => __("Out of stock"),
+                "mptoHtml" => $mptoHtml,
+                "pType" => $pType,
+                "preorderQty" => $preorderQty
+            ];
+    $data = json_encode($data);
+?>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "Bsitc_Brightpearl/js/view": <?php echo $data ?>
+        }
+    }
+</script>

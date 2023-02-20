@@ -1,0 +1,188 @@
+<?php $product     = $this->getProduct(); ?>
+
+<?php if ($product->getTypeId() =='bundle'):?>
+
+    <div class="wk-loading-mask wk-display-none">
+        <div class="wk-loader"></div>
+    </div>
+    <?php
+		$productId = $this->getProduct()->getId();
+		$helper = $this->helper('Bsitc\Brightpearl\Helper\Mtodata');
+		$builderstockFactory = $helper->_objectManager->create('Bsitc\Brightpearl\Model\BuilderstockFactory');
+		
+		$enable_fabric_stock =  $helper->getConfig('bpconfiguration/builders/enable_fabric_stock');
+		
+		$stockwarehousemsg =  $helper->getConfig('bpconfiguration/builders/stockwarehousemsg');
+		$enable_builder_stock = $helper->getConfig('bpconfiguration/builders/enable_builder_stock');
+		
+		
+		$builders_attribute_set =  $helper->getConfig('bpconfiguration/builders/attribute_set');
+		$instockmsg =  $helper->getConfig('bpconfiguration/builders/instockmsg');
+
+		$isBuilderProduct  = $helper->isBuilderProduct($product->getAttributeSetId());
+
+		$productsArray = array();
+		$productsArray['isbuilderproduct'] = $isBuilderProduct;
+		$productsArray['use_fabric_stock'] = $enable_fabric_stock;
+		$productsArray['fabric_sku'] = '';
+		$productsArray['fabric_qty'] = 0;
+		$productsArray['fabric_stock_msg'] = "<div class='product-info-stock-sku'><div class='stock unavailable' title='Availability'><span>".__("Out of stock")."</span></div></div>";
+
+		$payHtml = '';
+		$msg = '';
+		$flag = 0;
+		$preorderQty = 0;
+		$mptoHtml = '';
+		$pType = '';
+		$preOrderLabel = '';
+
+		$url = $helper->getCheckConfigUrl();
+		$po = $helper->_objectManager->create('\Bsitc\Brightpearl\Model\Bppurchaseorders');
+
+		//get all options of product
+		$optionsCollection = $product->getTypeInstance(true)->getOptionsCollection($product);
+		foreach ($optionsCollection as $options) {
+			$optionArray[$options->getOptionId()]['option_title'] = $options->getDefaultTitle();
+			$optionArray[$options->getOptionId()]['option_type'] = $options->getType();
+		}
+
+		$selectionCollection = $product->getTypeInstance(true)->getSelectionsCollection($product->getTypeInstance(true)->getOptionsIds($product), $product);
+
+    foreach ($selectionCollection as $proselection)
+	{
+        $payHtml         = '';
+        $msg             = '';
+        $flag             = 0;
+        $preorderQty     = 0;
+        $mptoHtml         = '';
+        $preoHtml         = '';
+        $pType             = '';
+        $preOrderLabel = '';
+		$productStock =  $helper->getStockItem($proselection->getId());
+
+        $selectionArray = [];
+
+		$selectionArray['enable_fabric_stock'] = 0;
+		if( $enable_fabric_stock and strtolower($optionArray[$proselection->getOptionId()]['option_title']) == strtolower('Fabric') )
+		{
+  			$productsArray['fabric_sku'] = $proselection->getSku();
+			$productsArray['fabric_qty'] = $productStock->getQty();
+			if($productStock->getQty() > 0 ){
+				if($instockmsg){
+					$productsArray['fabric_stock_msg'] = "<div class='product-info-stock-sku'><div class='stock available' title='Availability'><span>".$instockmsg."</span></div></div>";
+				}else{
+					$productsArray['fabric_stock_msg'] = "<div class='product-info-stock-sku'><div class='stock available' title='Availability'><span>".__("In stock - Please allow up to 5 working days for delivery.")."</span></div></div>";
+				}
+			}
+			else
+			{
+ 				if($enable_builder_stock)
+				{
+					$search = $builderstockFactory->findRecord('product_id', $proselection->getProductId() );
+					if($search and $search->getQty() > 0)
+					{
+						$productsArray['fabric_stock_msg'] = "<div class='product-info-stock-sku'><div class='stock available' title='Availability'><span>".	$stockwarehousemsg."</span></div></div>";					
+					}
+				}
+			}			
+			$selectionArray['enable_fabric_stock'] = 1;
+ 		}
+        $selectionArray['isbuilderproduct'] = $isBuilderProduct;
+        $selectionArray['selection_parent_id'] = $proselection->getParentProductId();
+        $selectionArray['selection_product_sku'] = $proselection->getSku();
+        $selectionArray['selection_product_name'] = $proselection->getName();
+		$selectionArray['selection_product_qty'] = $productStock->getQty();
+        //$selectionArray['selection_product_quantity'] = $proselection->getSelectionQty();
+        //$selectionArray['selection_product_price'] = $proselection->getPrice();
+        $selectionArray['selection_product_id'] = $proselection->getProductId();
+        $selectionArray['selection_id'] =   $proselection->getSelectionId();
+        $selectionArray['option_id'] =   $proselection->getOptionId();
+        $selectionArray['option_title'] =  $optionArray[$proselection->getOptionId()]['option_title'];
+        $selectionArray['option_type'] =  $optionArray[$proselection->getOptionId()]['option_type'];
+        $selectionArray['wk_preorder'] = 0;
+        $selectionArray['is_madetoorder'] = 0;
+        $selectionArray['is_printtoorder'] = 0;
+
+        $child = $helper->getProduct($proselection->getProductId());
+
+        if ($child->getIsMadetoorder()) {
+            $selectionArray['is_madetoorder'] = $child->getIsMadetoorder();
+            $obj = $helper->_objectManager->create('Bsitc\Brightpearl\Model\Madetoorder');
+            $pType             = 'mto';
+            $preorderQty     = 0;
+            $flag             = 0;
+            $preOrderLabel     = __("Made To Order");
+             $mptoHtml         = "<div class='wk-msg-box wk-info'>".$obj->getMadeToOrderMsg($child)."</div>";
+
+            $tmpArray         =  $obj->getMadeToOrderMsg($child, 'return_array');
+             $msg             = "<div class='wk-msg-box wk-info'><span class='wk-date-title'>".__('%1 - Available in %2 ', '<strong>' .  $tmpArray['generalinfo'] . '</strong>', $tmpArray['mto_lead_time_txt'])."</span></div>";
+
+
+        }
+
+        if ($child->getIsPrinttoorder()) {
+            $selectionArray['is_printtoorder'] = $child->getIsPrinttoorder();
+            $obj = $helper->_objectManager->create('Bsitc\Brightpearl\Model\Madetoorder');
+            $pType             = 'pto';
+            $preorderQty     = 0;
+            $flag             = 0;
+            $preOrderLabel     = __("Print To Order");
+            $msg             = $obj->getPrintToOrderMsg($child);
+            $mptoHtml         = "<div class='wk-msg-box wk-info'>".$msg."</div>";
+
+            $tmpArray         =  $obj->getPrintToOrderMsg($child, 'return_array');
+             $msg             = "<div class='wk-msg-box wk-info'><span class='wk-date-title'>".__('%1 - Available in %2 ', '<strong>' .  $tmpArray['generalinfo'] . '</strong>', $tmpArray['pto_lead_time_txt'])."</span></div>";
+
+
+        }
+
+        if ($helper->isPreorder($proselection->getProductId())) {
+            $selectionArray['wk_preorder'] = $child->getWkPreorder();
+            $obj = $helper->_objectManager->create('Bsitc\Brightpearl\Model\Madetoorder');
+            $preorderQty     =  $po->getTotalRemainderQtyInPo($child->getSku());
+            $flag            = 1;
+            $preOrderLabel     = __("Pre Order");
+            $preoHtml         = "<div class='wk-msg-box wk-info'>".$obj->getPreOrderMsg($child).'</div>';
+            // $msg             = "<div class='wk-msg-box wk-info'>".$obj->getPreOrderMsg($child).'</div>';
+            $tmpArray         =  $obj->getPreOrderMsg($child, 'return_array');
+             $msg             = "<div class='wk-msg-box wk-info'><span class='wk-date-title'>".__('%1 - Available in %2 ', '<strong>' .  $tmpArray['generalinfo'] . '</strong>', $tmpArray['exp_delivery_date'])."</span></div>";
+
+        }
+
+       //$productsArray[$proselection->getOptionId()][$proselection->getSelectionId()] = $selectionArray;
+
+        $selectionArray['payHtml']             =  $payHtml;
+        $selectionArray['msg']                 =  $msg;
+        $selectionArray['flag']                 =  $flag;
+        $selectionArray['url']                 =  $url;
+        $selectionArray['productId']         =  $proselection->getProductId();
+        $selectionArray['preOrderLabel']     =  $preOrderLabel;
+        $selectionArray['outOfStockLabel']     =  __("Out of stock");
+        $selectionArray['mptoHtml']             =  $mptoHtml;
+        $selectionArray['preoHtml']             =  $preoHtml;
+        $selectionArray['pType']             =  $pType;
+        $selectionArray['preorderQty']         =  $preorderQty;
+        $selectionArray['parentClass']         =  'fieldset-bundle-options';
+        $selectionArray['childClass']         =  'options-list';
+
+        $productsArray['bchilds'][$proselection->getOptionId()] = $selectionArray;
+
+    }
+	// echo '<pre>'; print_r($productsArray ); echo '</pre>';   die;
+    ?>
+
+
+      <?php foreach ($productsArray as $data): ?>
+
+            <?php $data = json_encode($productsArray);?>
+        <script type="text/x-magento-init">
+            {
+                "body": {
+                    "Bsitc_Brightpearl/js/bundleview": <?php echo $data ?>
+                }
+            }
+        </script>
+            <?php    break; ?>
+    <?php endforeach; ?>
+
+<?php endif;?>

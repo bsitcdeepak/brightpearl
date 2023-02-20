@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <bpcollectfromstore>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Bsitc\Brightpearl\Model\Carrier\Shipping</model>
+                <name>Free</name>
+                <price>0.00</price>
+                <title>Collect From Store</title>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+                <sort_order>1000</sort_order>
+                <handling_type>F</handling_type>
+            </bpcollectfromstore>
+        </carriers>
+    </default>
+</config>

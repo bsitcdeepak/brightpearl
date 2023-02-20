@@ -1,0 +1,48 @@
+<?php 
+    $helper = $this->helper('Bsitc\Brightpearl\Helper\Mtodata');
+    $_productCollection = $block->getLoadedProductCollection();
+    $po = $helper->_objectManager->create('\Bsitc\Brightpearl\Model\Bppurchaseorders');
+    $preorderInfo = [];
+	foreach ($_productCollection as $product) 
+	{
+		$isPreorder = $helper->isPreorder($product->getId());
+		$productUrl = $product->getProductUrl();
+		$preorderInfo[$productUrl]['preorder'] = '0';
+		$preorderInfo[$productUrl]['mto'] = '0';
+		$preorderInfo[$productUrl]['pto'] = '0';
+		$preorderInfo[$productUrl]['preorderQty'] = '0';
+		if ($isPreorder) {
+			$remainderQtyInPo =  $po->getTotalRemainderQtyInPo($product->getSku());
+			$preorderInfo[$productUrl]['preorderQty'] = $remainderQtyInPo;
+			$preorderInfo[$productUrl]['preorder'] = $isPreorder;
+		}        
+		if ($product->getIsMadetoorder()) {
+			 $preorderInfo[$productUrl]['mto'] = '1';
+			 $preorderInfo[$productUrl]['preorder'] = '0';
+		}
+		if ($product->getIsPrinttoorder()) {
+			$preorderInfo[$productUrl]['pto'] = '1';
+			$preorderInfo[$productUrl]['preorder'] = '0';
+		}
+	}
+    $payHtml = $helper->getPayPreOrderHtml(true);
+    $showMsgBox = true;
+    $data = [
+                "preorder" => $preorderInfo[$productUrl]['preorder'],
+                "preorderInfo" => $preorderInfo,
+                "payHtml" => $payHtml,
+                "showMsgBox" => $showMsgBox,
+                "preOrderLabel" => __("Pre Order"),
+                "mtoOrderLabel" => __("Made To Order"),
+                "ptoOrderLabel" => __("Print To Order"),
+                "outOfStockLabel" => __("Out of stock")
+            ];
+     $data = json_encode($data);
+?>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "Bsitc_Brightpearl/js/list": <?php echo $data ?>
+        }
+    }
+</script>

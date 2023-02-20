@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+   <event name="sales_model_service_quote_submit_before">
+       <observer name="bsitc_brightpearl_sales_address_save" instance="Bsitc\Brightpearl\Observer\SaveCustomFieldsInOrder" />
+   </event>
+	
+	<!-- 
+	
+   <event name="sales_order_save_after">
+     <observer name="bsitc_sales_order_placed_after" instance="Bsitc\Brightpearl\Observer\OrderSuccess" />
+   </event>
+   
+   <event name="sales_order_invoice_pay">
+       <observer name="bsitc_brightpearl_order_invoiced_paid" instance="Bsitc\Brightpearl\Observer\OrderInvoicedPaid" />
+   </event>
+   
+   -->
+   
+   <event name="sales_order_invoice_pay">
+       <observer name="bsitc_brightpearl_order_invoiced_paid" instance="Bsitc\Brightpearl\Observer\OrderSuccess" />
+   </event>   
+ 
+   <event name="sales_order_creditmemo_save_after">
+       <observer name="bsitc_brightpearl_creditmemosaveafter" instance="Bsitc\Brightpearl\Observer\Creditmemo" />
+   </event>
+	
+   <event name="order_cancel_after">
+       <observer name="bsitc_brightpearl_order_cancel" instance="Bsitc\Brightpearl\Observer\OrderCancel" />
+   </event>
+
+	<event name="checkout_cart_product_add_after">
+		 <observer name="add_custom_option" instance="Bsitc\Brightpearl\Observer\Producttocartafter" />
+	</event>
+	
+	<event name="customer_register_success">
+	   <observer name="event_customer_register_success" instance="Bsitc\Brightpearl\Observer\CustomerRegisterSuccess" />
+	</event>
+
+   <event name="sales_order_save_after">
+     <observer name="bsitc_sales_order_placed_after" instance="Bsitc\Brightpearl\Observer\Zerovalueorder" />
+   </event>
+
+</config>

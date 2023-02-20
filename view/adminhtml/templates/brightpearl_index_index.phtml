@@ -1,0 +1,88 @@
+<div class="page-main-actions">    
+    <div class="page-actions-placeholder" style=""></div>
+    <div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+        <div class="page-actions-inner" data-title="">
+            <div class="page-actions-buttons">&nbsp;</div>
+        </div>
+    </div>
+</div>
+ 
+
+
+ 
+<div id="page:main-container" class="page-columns">
+    <div class="admin__old">
+        <div id="container" class="main-col">
+        
+            <div class="dashboard-container row">
+            
+                <div class="dashboard-main col-m-8 col-m-push-4"> 
+                
+                    <div class="hidden" style="display:none;">
+                    
+                        <form data-mage-init='{"validation": {}}' id="sku-bpid-mapping-form" action="<?php echo $this->getUrl('brightpearl/*/clearrawdata');?>" method="post" enctype="multipart/form-data" >
+                            <input type="hidden" name="form_key" value="<?php echo $block->getFormKey() ?>" />
+                            <table class="data-grid">
+                                <tr>
+                                    <th class="data-grid-th">
+                                        <span style="font-size: 1.8rem;">Clean Raw Data</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="col-name"> </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name"><input id="tbl" class="required-entry" type="text" value="" name="tbl"></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">
+                                        <button id="v_btn" title="Submit" type="submit" class="action-primary" method="post">
+                                            <span class="ui-button-text"><span>Submit</span></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            
+                            </table>
+                        </form>        
+                    
+                    </div>
+                </div>
+                
+                <div class="dashboard-secondary col-m-4 col-m-pull-8">
+                
+                    <form data-mage-init='{"validation": {}}' id="sku-bpid-mapping-form" action="<?php echo $this->getUrl('brightpearl/*/saveskubpid');?>" method="post" enctype="multipart/form-data" >
+                        <input type="hidden" name="form_key" value="<?php echo $block->getFormKey() ?>" />
+                        <table class="data-grid">
+                            <tr>
+                                <th class="data-grid-th">
+                                    <span style="font-size: 1.8rem;">Import SKU and BP Id Mapping</span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Upload CSV file for SKU and BP Id Mapping</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name"><input id="skubpid" class="required-entry" type="file" value="" name="skubpid"></td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">
+                                    <button id="skubpid_btn" title="Save" type="submit" class="action-primary" method="post">
+                                        <span class="ui-button-text"><span>Save</span></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        
+                        </table>
+                    </form>        
+      
+                </div>
+                
+            </div>
+            
+ 
+            <div class="dashboard-container row"><br><br><br><br><br><br></div>
+            
+                
+        </div>
+    </div>
+</div>

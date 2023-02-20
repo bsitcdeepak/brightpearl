@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+ 
+    <template id="delivey_change_email_template" label="PO delivey date alert" file="po_delivey_change_alert.html" type="html" module="Bsitc_Brightpearl" area="frontend"/>
+	 <template id="alert_email_template" label="Alert email" file="alert_email.html" type="html" module="Bsitc_Brightpearl" area="frontend"/>
+     
+</config>

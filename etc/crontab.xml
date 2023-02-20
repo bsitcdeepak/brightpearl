@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="bsitc_brightpearl_cron_group">
+
+        <!--Fetch brightpearl Attributes per day at 1AM-->
+        <job name="bsitc_brightpearl_cronjob_bpapi" instance="Bsitc\Brightpearl\Cron\Bpapi" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_bpapi</config_path>
+        </job>
+
+        <!--INSERT DATA in Magento using REST API(Hits cron at 2AM for insert attributes at magento)-->
+		<job name="bsitc_brightpearl_cronjob_mgt" instance="Bsitc\Brightpearl\Cron\Mgtapi" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_bpapi</config_path>
+        </job>
+
+        <!--Start Products crons-->
+        <!-- Webhooks crom at 3AM  -->
+        <job name="bsitc_brightpearl_cronjob_productwebhook" instance="Bsitc\Brightpearl\Cron\Productwebhook" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_productwebhook</config_path>
+        </job> 
+
+        <!-- Create an update products every 6 hrs  -->
+        <job name="bsitc_brightpearl_cronjob_createupdateproduct" instance="Bsitc\Brightpearl\Cron\Createupdateproduct" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_createupdateproduct</config_path>
+        </job>
+
+        <!--Products Images Updated products from one days-->
+        <job name="bsitc_brightpearl_cronjob_syncupdateproimgs" instance="Bsitc\Brightpearl\Cron\Syncupdateproductmgt" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_syncupdateproimgs</config_path>
+        </job> 
+
+        <!--Ends Products crons-->
+        <!-- PROCESS Order QUEUE  -->
+		<job name="bsitc_brightpearl_cronjob_orderqueue" instance="Bsitc\Brightpearl\Cron\Processsalesorder" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_orderqueue</config_path>
+        </job> 
+	
+        <!-- PROCESS Fulfilment QUEUE  -->
+		<job name="bsitc_brightpearl_cronjob_fulfilment" instance="Bsitc\Brightpearl\Cron\Fulfilment" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_fulfilment</config_path>
+        </job> 
+	
+        <!-- PROCESS PO QUEUE  -->
+		<job name="bsitc_brightpearl_cronjob_purchaseorder" instance="Bsitc\Brightpearl\Cron\Purchaseorder" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_purchaseorder</config_path>
+        </job> 
+	
+        <!-- PROCESS Stock Transfer QUEUE  -->
+		<job name="bsitc_brightpearl_cronjob_stocktransfer" instance="Bsitc\Brightpearl\Cron\Stocktransfer" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_stocktransfer</config_path>
+        </job> 
+		
+		
+        <!-- PROCESS Inventory QUEUE  -->
+		<job name="bsitc_brightpearl_cronjob_inventory" instance="Bsitc\Brightpearl\Cron\Inventory" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_inventory</config_path>
+        </job> 
+	
+        <!-- PROCESS Inventory QUEUE  -->
+		<job name="bsitc_brightpearl_cronjob_paymentcapture" instance="Bsitc\Brightpearl\Cron\Paymentcapture" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_paymentcapture</config_path>
+        </job> 
+		
+        <!-- Fetch brightpearl clean log 1 AM -->
+        <job name="bsitc_brightpearl_cronjob_log" instance="Bsitc\Brightpearl\Cron\Log" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_log</config_path>
+        </job>
+ 		
+        <!-- cronjob_failedorderalert  Emailalert -->
+        <job name="bsitc_brightpearl_cronjob_failedorderalert" instance="Bsitc\Brightpearl\Cron\Emailalert" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_failedorderalert</config_path>
+        </job>
+		
+        <!-- cronjob_stuckinventoryalert  Emailalert -->
+        <job name="bsitc_brightpearl_cronjob_stuckinventoryalert" instance="Bsitc\Brightpearl\Cron\Stuckinventoryemailalert" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_stuckinventoryalert</config_path>
+        </job>
+  		
+        <!-- cronjob_failedpaymentcapture  Failed Payment Capture -->
+        <job name="bsitc_brightpearl_cronjob_failedpaymentcapture" instance="Bsitc\Brightpearl\Cron\Failedpaymentcapture" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_failedpaymentcapture</config_path>
+        </job>
+		
+        <!-- cronjob creditmemo process -->
+        <job name="bsitc_brightpearl_cronjob_creditmemo" instance="Bsitc\Brightpearl\Cron\Creditmemo" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_creditmemo</config_path>
+        </job>
+		
+        <!-- cronjob cronjob_reconciliation process -->
+        <job name="bsitc_brightpearl_cronjob_reconciliation" instance="Bsitc\Brightpearl\Cron\Reconciliation" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_reconciliation</config_path>
+        </job>
+		
+        <!-- cronjob cronjob_fullinventorysyn process -->
+        <job name="bsitc_brightpearl_cronjob_fullinventorysyn" instance="Bsitc\Brightpearl\Cron\Fullinventorysyn" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_fullinventorysyn</config_path>
+        </job>
+		
+        <!-- cronjob retry posting failed credit memo  process --> 
+        <job name="bsitc_brightpearl_cronjob_processfailedcreditmemo" instance="Bsitc\Brightpearl\Cron\Failedcreditmemo" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_processfailedcreditmemo</config_path>
+        </job>
+		
+        <!-- cronjob retry posting failed cancle order status update process --> 
+        <job name="bsitc_brightpearl_cronjob_processfailedcancelorder" instance="Bsitc\Brightpearl\Cron\Processfailedcancelorder" method="execute">
+            <config_path>bpconfiguration/bpcron/cronjob_processfailedcancelorder</config_path>
+        </job>
+		
+        <!-- cronjob update product based on configure made to order category  --> 
+        <job name="bsitc_brightpearl_cronjob_updatemtoproducts" instance="Bsitc\Brightpearl\Cron\Updatemtoproducts" method="execute">
+			<config_path>bpconfiguration/bpcron/cronjob_updatemtoproducts</config_path>
+        </job>
+		
+        <!-- cronjob process trade customer queue   --> 
+        <job name="bsitc_brightpearl_cronjob_tradecustomerqueue" instance="Bsitc\Brightpearl\Cron\Tradecustomerqueue" method="execute">
+			<config_path>bpconfiguration/bpcron/cronjob_tradecustomerqueue</config_path>
+        </job>
+   		
+        <!-- cronjob process trade customer queue   --> 
+        <job name="bsitc_brightpearl_cronjob_manualreindex" instance="Bsitc\Brightpearl\Cron\Manualreindex" method="execute">
+			<config_path>bpconfiguration/bpcron/cronjob_manualreindex</config_path>
+		</job>
+		
+        <!-- cronjob process Builder Stock Syn Job   --> 
+        <job name="bsitc_brightpearl_cronjob_cronjob_builderstock" instance="Bsitc\Brightpearl\Cron\Builderstock" method="execute">
+			<config_path>bpconfiguration/bpcron/cronjob_builderstock</config_path>
+        </job>
+		
+        <!-- cronjob process Clean inventory reservation   --> 
+        <job name="bsitc_brightpearl_cronjob_cleaninventoryreservation" instance="Bsitc\Brightpearl\Cron\Cleaninventoryreservation" method="execute">
+			<config_path>bpconfiguration/bpcron/cronjob_cleaninventoryreservation</config_path>
+		</job>
+
+        <!-- cronjob full po syn --> 
+        <job name="bsitc_brightpearl_cronjob_fullposyn" instance="Bsitc\Brightpearl\Cron\Fullposyn" method="execute">
+			<config_path>bpconfiguration/bpcron/cronjob_fullposyn</config_path>
+		</job>
+		
+		<!-- cronjob segmetric failed retry --> 
+        <job name="bsitc_brightpearl_segmetric_cronjob_retry" instance="Bsitc\Brightpearl\Cron\SegmetricRetry" method="execute">
+			<config_path>bpconfiguration/segmetrics/cronjob_processfailed_segmetric_order_customer</config_path>
+		</job>
+
+
+    </group>
+</config>

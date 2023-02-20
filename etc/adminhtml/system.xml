@@ -1,0 +1,1210 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="bsitc" sortOrder="9999999" translate="label">
+			<label>BSITC</label>
+		</tab>
+		<section id="bpconfiguration" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="1" translate="label">
+			<label>Brightpearl Configuration</label>
+			<tab>bsitc</tab>
+			<resource>Bsitc_Brightpearl::config_bsitc_brightpearl</resource>
+			<group id="api" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label">
+				
+				<label>Brightpearl Configuration</label>
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment>Enable or Disable</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="bp_useremail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="20" translate="label" type="text">
+					<label>Brightpearl Email Id</label>
+					<comment/>
+				</field>
+				
+				<field id="bp_account_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="30" translate="label" type="text">
+					<label>Brightpearl Account Id</label>
+					<comment/>
+				</field>
+				
+				<field id="bp_password" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="40" translate="label" type="password">
+					<label>Brightpearl Password</label>
+					<comment/>
+				</field>
+				
+				<field id="bp_dc_code" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="50" translate="label" type="text">
+					<label>Datacentre Code (DC CODE)</label>
+					<comment>URL : https://www.brightpearl.com/developer/latest/concept/uri-syntax.html</comment>
+				</field>
+				
+				<field id="bp_api_version" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="60" translate="label" type="text">
+					<label>API Version</label>
+					<comment/>
+				</field>
+				
+				<field id="bp_api_service" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="70" translate="label" type="text">
+					<label>API Service</label>
+					<comment/>
+				</field> 	
+
+				<field id="bp_api_saleschannel" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="80" translate="label" type="text">
+					<label>SalesChannelName</label>
+					<comment/>
+				</field>
+				
+				<field id="privateapp" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable connection using Private app.</label>
+					<comment>Defaul based on Authorisation Token</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="devtoken" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="110" translate="label" type="text">
+					<label>Developer Toekn</label>
+					<comment/>
+				</field>
+
+				<field id="devsecrete" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="120" translate="label" type="text">
+					<label>Developer Secrete</label>
+					<comment/>
+				</field>
+
+				<field id="apptoken" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="130" translate="label" type="text">
+					<label>App Token</label>
+					<comment/>
+				</field>
+
+				<field id="devref" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="140" translate="label" type="text">
+					<label>Developer reference</label>
+					<comment/>
+				</field>
+
+				<field id="appref" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="150" translate="label" type="text">
+					<label>App reference</label>
+					<comment/>
+				</field>
+  
+			</group>
+
+			<group id="bpproduct" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="150" translate="label">
+				<label>Products Configuration</label>
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+
+				<field id="bp_pricelist" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="90" translate="label" type="select">
+					<label>Select Base Price for Products</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allpricelist</source_model>
+				</field>
+
+				<field id="bp_sppricelist" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Select Special Price for Products</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\SpecialAllpricelist</source_model>
+				</field>
+
+				<field id="ecomm_attribute" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="110" translate="label" type="text">
+					<label>Ecomm Attribute Code</label>
+					<comment>Default Code : PCF_ECOM_PRO</comment>
+ 				</field>
+				
+				<field id="pos_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="120" translate="label" type="select">
+					<label>Enable Product in POS</label>
+					<comment>Enable or Disable Products in POS</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+
+				<field id="product_img" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="130" translate="label" type="text">
+					<label>Product Image Code On BP</label>
+					<comment>Default Code : PCF_MGTPIMG</comment>
+ 				</field>
+
+				<field id="bp_colour" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="140" translate="label" type="text">
+					<label>Brightpearl Colour Attribute Code</label>
+					<comment>Default Code : colour (Note : This attribute are imported in BSITC local table 'bsitc_brightpearl_option' with option values).</comment>
+ 				</field>
+
+				<field id="mgt_colour" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="150" translate="label" type="text">
+					<label>Magento Colour Attribute Code</label>
+					<comment>Default Code : colour</comment>
+ 				</field>
+
+				<field id="bp_size" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="160" translate="label" type="text">
+					<label>Brightpearl Size Attribute Code</label>
+					<comment>Default Size : size (Note : This attribute are imported in BSITC local table 'bsitc_brightpearl_option' with option values).</comment>
+ 				</field>
+
+				<field id="mgt_size" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="170" translate="label" type="text">
+					<label>Magento Size Attribute Code</label>
+					<comment>Default Code : size</comment>
+ 				</field>
+				
+				<field id="custom_attribute" translate="label comment" type="textarea" sortOrder="171" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom Attributes</label>
+                </field>
+
+
+				<field id="update_product_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="180" translate="label" type="select">
+					<label>Enable Product Update</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+ 				
+				<field id="update_price_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="190" translate="label" type="select">
+					<label>Enable Price Update</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+ 				
+			</group>	
+
+			<!--Start Brightpearl Customer Configuration   -->
+			<group id="bp_customerconfig" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="250" translate="label">
+				<label>Customer Configuration</label>
+				
+ 				<field id="leadesource" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="100" translate="label" type="select">
+					<label>Default Leadsource for Customer</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allleadsource</source_model>
+ 				</field>
+				
+				<field id="defaultpricelist" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="200" translate="label" type="select">
+					<label>Select Price List</label>
+					<comment>Please select brightpearl price list if not defined it takes default 3 for retail</comment>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allpricelist</source_model>
+				</field>
+				
+				<field id="defaultcurrency" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="300" translate="label" type="select">
+					<label>Select Default Currency</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbpcurrencylist</source_model>
+				</field>
+				
+				<field id="attachment" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>Company Attachment Attribute Code</label>
+					<comment>Default Code : PCF_ATCHMENT</comment>
+ 				</field>
+				
+				
+ 			
+			</group>		
+			  			
+ 			<group id="bpinventory" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label">
+				<label>Inventory Configuration</label>
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+					<label>Enable Webhook Inventory Update</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="fullinventorysyn" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="20" translate="label" type="select">
+					<label>Enable Full Inventory Syn</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				
+			</group>	
+			
+			<!--Start Brightpearl Order Configuration   -->
+			<group id="bp_orderconfig" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label">
+				<label>Order Configuration</label>
+				
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="use_new_order_api" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="20" translate="label" type="select">
+					<label>Use new order API to Post order with row items</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				
+				<field id="mgt_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="50" translate="label" type="select">
+					<label>Select MGT Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="trade_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="60" translate="label" type="select">
+					<label>Select Trade Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="bespok_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="70" translate="label" type="select">
+					<label>Select Bespok Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="pos_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Select POS Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+
+				<field id="pre_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="110" translate="label" type="select">
+					<label>Select Pre Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="mto_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="112" translate="label" type="select">
+					<label>Select Made To Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="pto_order_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="114" translate="label" type="select">
+					<label>Select Print To Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				
+
+				<field id="mgt_order_cancel" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="125" translate="label" type="select">
+					<label>Select Order Cancel Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+
+				<field id="mgt_order_channel" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="150" translate="label" type="select">
+					<label>Select Channel For MGT Order</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Channel</source_model>
+				</field>
+				
+				<field id="trade_order_channel" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="150" translate="label" type="select">
+					<label>Select Channel For Trade Order</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Channel</source_model>
+				</field>
+				
+
+				<field id="pos_order_channel" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="select">
+					<label>Select Channel For POS Order</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Channel</source_model>
+				</field>
+
+				<field id="order_price_list" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="250" translate="label" type="select">
+					<label>Select Price List</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allpricelist</source_model>
+				</field>
+
+				<field id="order_cost_price_list" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="select">
+					<label>Select Cost Price List</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\SpecialAllpricelist</source_model>
+				</field>
+				
+				<field id="mgt_order_warehouse" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="350" translate="label" type="select">
+					<label>Select Warehouse For MGT Order</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbpwarehouse</source_model>
+				</field>
+				
+				<field id="pos_order_warehouse" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="select">
+					<label>Select Warehouse For POS Order</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbpwarehouse</source_model>
+				</field>
+				
+				<field id="order_product_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="450" translate="label" type="select">
+					<label>Nominal for ordered product</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+				
+				<field id="order_discount_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="460" translate="label" type="select">
+					<label>Nominal for ordered discount</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+ 
+				<field id="order_shipping_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="select">
+					<label>Nominal for shipping charges</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+							
+	
+				<field id="store_credit_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="520" translate="label" type="select">
+					<label>Nominal for Store Credit </label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+				
+				<field id="over_size_handling_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="530" translate="label" type="select">
+					<label>Nominal for Over Size Handling Fee </label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+								
+				<field id="extra_shipping_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="540" translate="label" type="select">
+					<label>Nominal for Extra Shipping Fee </label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+
+				<field id="taxcode" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="550" translate="label" type="select">
+					<label>Default Tax Class For Taxable Product</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbptax</source_model>
+ 				</field>
+				
+				<field id="notaxcode" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="select">
+					<label>Default Tax Class For Non Taxable Product</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbptax</source_model>
+ 				</field>
+ 				
+				<field id="bpleadsource" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label" type="select">
+					<label>Bp Lead Source</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allleadsource</source_model>
+ 				</field>
+
+				<field id="bpshippingmethod" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="800" translate="label" type="select">
+					<label>Bp Shipping Method</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbpshipping</source_model>
+ 				</field>
+
+				<field id="posstaff" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="900" translate="label" type="text">
+					<label>POS Staff Custom Attribute Code</label>
+					<comment>Default Code : PCF_POSSTAFF</comment>
+ 				</field>
+ 				
+				
+				<field id="skiporderfrom" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1000" translate="label" type="date">
+					<label>Order Post Starting Date</label>
+					<comment>skip old order that are edit by thirdpart extesion and added in queue based on configure date</comment>
+					<frontend_model>Bsitc\Brightpearl\Block\Adminhtml\System\Config\Date</frontend_model>
+ 				</field>
+				
+				
+				<field id="rounding_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1100" translate="label" type="select">
+					<label>Enable Adding Rounding Row</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="rounding_threshold" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1200" translate="label" type="text">
+					<label>Threshold Limit for Rounding Row</label>
+					<comment>Rounding Row add in BP order if difference less then threshold limit</comment>
+  				</field>
+				  
+ 				<field id="rounding_sku_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1300" translate="label" type="select">
+					<label>Nominal for Rounding Sku </label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+ 				
+				<field id="enablezerotax" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1400" translate="label" type="select">
+					<label>Repalce Tax with T0 Before Posting the Order to Bp</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+ 				
+				<field id="zerotaxcountry" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1410" translate="label" type="multiselect">
+					<label>Select the Shipping Country for Replacing the Tax </label>
+					<source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+					<can_be_empty>1</can_be_empty>
+					<comment/>
+				</field>		
+
+				<field id="enableskureplacement" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1420" translate="label" type="select">
+					<label>Enable SKU replacement Functionality</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="enablefreeproduct" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1430" translate="label" type="select">
+					<label>Enable Add Free Product Functionality</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="freeproduct_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1440" translate="label" type="select">
+					<label>Nominal for free product </label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+
+				<field id="enable_shipping_country_check" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1441" translate="label" type="select">
+					<label>Enable Shipping Country Check</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+
+				<field id="enabletopostchild" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1460" translate="label" type="select">
+					<label>Enable post child product to BP for following Attribute Set</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+
+				<field id="attributesettopostchild" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1461" translate="label" type="multiselect">
+					<label>Select Bundle Product Attribute set for post child product to BP</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\AllAttibutesSets</source_model>
+					<comment/>
+				</field>		
+				
+				<field id="custom_pricelist_mapping" translate="label comment" type="textarea" sortOrder="1500" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sales Price List Mapping</label>
+					<comment>Ex - storeId:customerGroupId:pricelistId#storeId:customerGroupId:pricelistId</comment>
+                </field>
+				
+				<field id="sv_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1600" translate="label" type="select">
+					<label>Enable Swedish VAT breakdown in Brightpearl</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="enablesplitsku" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1800" translate="label" type="select">
+					<label>Enable SKU Split Functionality</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<!-- 
+				<field id="sv_percent" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1610" translate="label" type="text">
+					<label>Tax breakdown percent</label>
+					<comment>Default percent : 25</comment>
+ 				</field>
+				
+				<field id="sv_taxclass" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1620" translate="label" type="select">
+					<label>Tax Class</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbptax</source_model>
+ 				</field>
+				
+				<field id="sv_category" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1630" translate="label" type="text">
+					<label>Category for Swedish VAT breakdown</label>
+					<comment>ex:12,13,14</comment>
+ 				</field>
+				
+				<field id="sv_country" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1640" translate="label" type="multiselect">
+					<label>Shipping country for Swedish VAT breakdown </label>
+					<source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+					<can_be_empty>1</can_be_empty>
+					<comment/>
+				</field>		
+				-->
+				
+				
+			</group>		
+
+
+			<!-- Satart BP Sales Credit Configuration -->
+			<group id="bp_sc_config" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label">
+				<label>Sales Credit Configuration</label>
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment>Enable or Disable</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="sc_status_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="20" translate="label" type="select">
+					<label>Status for New Sales Credit</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Scstatus</source_model>
+				</field>
+  				
+				<field id="scp_status_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="30" translate="label" type="select">
+					<label> Parent Order Status for Partial Creditmemo</label>
+					<comment>Parent Order Status for partially refunded </comment>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="scf_status_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="30" translate="label" type="select">
+					<label> Parent Order Status for Fully Creditmemo</label>
+					<comment>Parent Order Status for fully refunded </comment>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="adjustment_refunds_nominal" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="40" translate="label" type="select">
+					<label>Nominal for Adjustment Refunds </label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allnominals</source_model>
+ 				</field>
+				
+				<field id="sc_skip_payment" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="50" translate="label" type="multiselect">
+					<label>Skip post payment to brightpearl for Web order return in POS store</label>
+					<comment>Skip post payment to brightpearl for WEB order return in POS store</comment>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allmgtpaymentconfig</source_model>
+ 				</field>
+   				
+			</group>			
+ 			<!-- End BP Sales Credit Configuration -->			
+			
+			<!-- Satart Payment Captur Configuration -->
+			<group id="payment_capture_config" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label">
+				<label>Payment Captur Configuration</label>
+				
+ 				<field id="offline_capture" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="20" translate="label" type="select">
+					<label>Enable Offline Capture </label>
+					<comment>If this is set no it means we caputure online payment</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="bp_capture_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="30" translate="label" type="select">
+					<label>Capture Payment Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="bp_capture_update_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="40" translate="label" type="select">
+					<label>Capture Payment Success Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+				
+				<field id="bp_capture_failed_status" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="50" translate="label" type="select">
+					<label>Capture Payment Failed Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+  				
+				
+ 			</group>			
+ 			<!-- End Payment Captur Configuration -->		
+
+
+			<group id="bpcron" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="2000" translate="label">
+				<label>Cron Job's Configuration</label>
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable Configuration File Auto Cron Jobs</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="cronjob_bpapi" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="text">
+					<label>Fetch Brightpearl Attributes</label>
+					<comment>Cron Should be once a day Ex. : 0 1 * * *</comment>
+ 				</field> 
+  				
+				<field id="cronjob_mgt" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="text">
+					<label>Update Brightpearl Attributes in Magento</label>
+					<comment>Cron Should be once a day after the above cron job Ex. : 30 1 * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_productwebhook" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>Fetch Brightpearl Products</label>
+					<comment>Cron Should be every 6 hrs Ex. : 0 */6 * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_createupdateproduct" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="text">
+					<label>Create and Update Products in Magento</label>
+					<comment>Cron Should be every 6 hrs after the above cron job Ex. : 30 */6 * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_syncupdateproimgs" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="text">
+					<label>Products Images Updated on Brightpearl</label>
+					<comment>Cron Should be once a day Ex. : 0 23 * * *</comment>
+ 				</field> 
+  				
+				<field id="cronjob_orderqueue" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label" type="text">
+					<label>Process Order Queue</label>
+					<comment>Process Order Queue Ex. : */5 * * * *</comment>
+ 				</field> 
+  				
+				<field id="cronjob_fulfilment" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="800" translate="label" type="text">
+					<label>Process Fulfilment Queue</label>
+					<comment>Process Fulfilment Queue Ex. : */30 * * * *</comment>
+ 				</field> 
+  				
+				<field id="cronjob_purchaseorder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="900" translate="label" type="text">
+					<label>Process Purchase Order Queue</label>
+					<comment>Process Purchase Order Queue Ex. : */30 * * * *</comment>
+ 				</field> 
+   				
+				<field id="cronjob_stocktransfer" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1000" translate="label" type="text">
+					<label>Process Stock Transfer Queue</label>
+					<comment>Process Stock Transfer Queue Ex. : */30 * * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_inventory" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1100" translate="label" type="text">
+					<label>Process Inventory Queue</label>
+					<comment>Process Inventory Queue Ex. : */5 * * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_paymentcapture" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1200" translate="label" type="text">
+					<label>Process Paymentcapture Queue</label>
+					<comment>Process Paymentcapture Queue Ex. : */5 * * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_failedpaymentcapture" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1250" translate="label" type="text">
+					<label>Process Failed Paymentcapture Cron</label>
+					<comment>Process Failed Paymentcapture Cron Ex. : */5 * * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_log" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1300" translate="label" type="text">
+					<label>Process Log Cleaning Job</label>
+					<comment>Process Log Cleaning Ex. : */5 * * * *</comment>
+ 				</field> 
+				
+				<field id="cronjob_failedorderalert" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1400" translate="label" type="text">
+					<label>Failed Order Email Alert Job</label>
+					<comment>Failed Order Email Alert Job Ex. : */30 * * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_stuckinventoryalert" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1400" translate="label" type="text">
+					<label>Stuck Inventory Email Alert Job</label>
+					<comment>Stuck Inventory Email Alert Job Ex. : */30 * * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_creditmemo" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1500" translate="label" type="text">
+					<label>Creditmemo Process Job</label>
+					<comment>Creditmemo Process Job Ex. : */30 * * * *</comment>
+ 				</field> 
+				
+				
+				<field id="cronjob_processfailedcreditmemo" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1550" translate="label" type="text">
+					<label>Retry Failed Creditmemo Job</label>
+					<comment>Retry Failed Creditmemo Job Ex. : */30 * * * *</comment>
+ 				</field> 
+ 				
+				<field id="cronjob_reconciliation" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1600" translate="label" type="text">
+					<label>Stock Reconciliation Process Job</label>
+					<comment>Stock Reconciliation Process Job Ex. : 0 */12 * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_fullinventorysyn" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1600" translate="label" type="text">
+					<label>Full Inventroy Syn Process Job</label>
+					<comment>Full Inventroy Syn Process Job Ex. : 0 */12 * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_processfailedcancelorder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1650" translate="label" type="text">
+					<label>Process Failed Cancel Order Status Update Job</label>
+					<comment>Process Failed Cancel Order Job Ex. : 0 */12 * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_updatemtoproducts" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1660" translate="label" type="text">
+					<label>Update Made to Order category Products Job </label>
+					<comment>Process Made to Order category Products Job Ex. : 0 */2 * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_tradecustomerqueue" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1670" translate="label" type="text">
+					<label>Process Trade Customer Queue </label>
+					<comment>Process Trade Customer Queue Job Ex. : 0 */2 * * *</comment>
+ 				</field> 
+
+				<field id="cronjob_builderstock" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1680" translate="label" type="text">
+					<label>Process Builder Stock Syn Job </label>
+					<comment>Process Trade Customer Queue Job Ex. : 0 */2 * * *</comment>
+ 				</field> 
+
+				<field id="log_cleaning_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="2000" translate="label" type="select">
+					<label>Enable of DB Log cleaning</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="log_cleaning_days" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="2500" translate="label" type="text">
+					<label>Save DB Logs, Days</label>
+					<comment>Default keep log last 3 days</comment>
+ 				</field> 
+				
+				<field id="log_recording_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3000" translate="label" type="select">
+					<label>Enable of DB Log Recording</label>
+					<comment>Enable or Disable DB log Recording</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				
+				<field id="enable_manualreindex" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3100" translate="label" type="select">
+					<label>Enable Manually Reindex</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="cronjob_manualreindex" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3200" translate="label" type="text">
+					<label>Manually Reindex Run</label>
+					<comment>Cron job to run manually reindex  Ex. : 0 */2 * * *</comment>
+ 				</field> 
+				
+				<field id="enable_fullposyn" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3300" translate="label" type="select">
+					<label>Enable Missing PO Syn</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="cronjob_fullposyn" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3400" translate="label" type="text">
+					<label>Missing PO Syn Run</label>
+					<comment>Cron job syn PO that are missing in last 15 days</comment>
+ 				</field> 
+				
+  				
+				<field id="enable_clean_reservation" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3500" translate="label" type="select">
+					<label>Enable Clean Inventory Reservation </label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="cronjob_cleaninventoryreservation" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="3600" translate="label" type="text">
+					<label>Clean Inventory Reservation Run</label>
+					<comment>Cron job to run Clean Inventory Reservation  Ex. : 0 */2 * * *</comment>
+ 				</field> 
+  				
+			</group>			
+	
+			<group id="podeliveryalert" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1000" translate="label">
+				<label>Purchase Order (PO) Configuration</label>
+ 				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+				
+				<field id="po_attribute" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="text">
+					<label>Purchase Order (PO) Attribute Code</label>
+					<comment>Default Code : PCF_PREORDER</comment>
+ 				</field> 
+ 				
+				<field id="enable_email" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="select">
+					<label>Enable email alert</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="alertdays" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>Alert if difference greater than</label>
+ 				</field>
+
+				<field id="mailtocustomer" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="select">
+					<label>Email alert mail send to customer</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+ 				</field>
+
+				<field id="toname" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="text">
+					<label>To Name</label>
+ 				</field>
+
+				<field id="toemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label" type="text">
+					<label>To Email</label>
+ 				</field>
+
+				<field id="ccemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="800" translate="label" type="text">
+					<label>CC Email</label>
+ 				</field>
+
+				<field id="sendername" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="900" translate="label" type="text">
+					<label>Sender Name</label>
+ 				</field>
+				
+				<field id="senderemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1000" translate="label" type="text">
+					<label>Sender Email</label>
+ 				</field>
+				
+				<field id="pole_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1100" translate="label" type="select">
+					<label>Enable Limited Edition</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="pole" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1200" translate="label" type="text">
+					<label>PO Limited Edition Attribute</label>
+					<comment>Default Code : PCF_LTDETON</comment>
+ 				</field> 
+				
+				<field id="pole_msg" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1300" translate="label" type="text">
+					<label>PO Limited Edition Msg Attribute</label>
+					<comment>Default Code : PCF_LEMSG</comment>
+ 				</field> 
+				
+				<field id="pole_exp_date" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1400" translate="label" type="text">
+					<label>PO Limited Edition Exp Date Attribute</label>
+					<comment>Default Code : PCF_LEEXPDAT</comment>
+ 				</field> 
+ 				
+				<field id="exclude_child_po_sku" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1500" translate="label" type="select">
+					<label>Exclude Child Po SKU if it is exist in Prarent PO</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				
+				
+			</group>			
+
+			<group id="emailalert" translate="label" type="text" sortOrder="2500" showInDefault="1" showInWebsite="1" showInStore="1">
+ 				<label>Email Alert</label>
+ 				
+				<field id="foa_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable email alert for failed order</label>
+ 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+
+				
+				<field id="foa_toname" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="text">
+					<label>To Name for failed order alert  </label>
+ 				</field>
+				
+				<field id="foa_toemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="text">
+					<label>To Email for failed order alert </label>
+ 				</field>
+				
+				<field id="foa_ccemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>CC Email for failed order alert </label>
+ 				</field>
+
+				<field id="foa_sendername" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="text">
+					<label>Sender Name</label>
+ 				</field>
+				
+				<field id="foa_enderemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="text">
+					<label>Sender Email</label>
+ 				</field>
+  			
+			
+				<field id="fia_enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label" type="select">
+					<label>Enable email alert for stuck inventory queue</label>
+ 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+
+				
+				<field id="fia_toname" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="800" translate="label" type="text">
+					<label>To Name for stuck inventory alert  </label>
+ 				</field>
+				
+				<field id="fia_toemail" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="900" translate="label" type="text">
+					<label>To Email for stuck inventory alert </label>
+ 				</field>
+			
+			
+			
+            </group>
+
+
+
+
+			<group id="bpcollectfromstore" translate="label" type="text" sortOrder="3000" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BP Collect From Store</label>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+ 	
+			<group id="madetoorder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="4000" translate="label">
+			
+				<label>Made To Order Configuration</label>
+ 				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+				
+				<field id="mtocategories" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="text">
+					<label>Made To Order Categories</label>
+					<comment>Put category ids seperate by comma ex.: 2,3,4,5</comment>
+ 				</field> 
+ 				
+				<field id="mtotitle" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="text">
+					<label>MTO Title</label>
+					<comment/>
+				</field>
+				
+				<field id="ptocategories" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>Print To Order Categories</label>
+					<comment>Put category ids seperate by comma ex.: 2,3,4,5</comment>
+ 				</field> 
+ 				
+				<field id="ptotitle" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="text">
+					<label>PTO Title</label>
+					<comment/>
+				</field>
+				
+				<field id="leadtimemsg" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="text">
+					<label>Delivery Lead Time Title</label>
+					<comment/>
+				</field>
+				
+				<field id="leadtimedays" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label" type="text">
+					<label>Delivery Lead Time Days</label>
+					<comment/>
+				</field>
+ 
+			</group>			
+			
+			<group id="tradecustomer" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="5000" translate="label">
+			
+				<label>Trade Customer Configuration</label>
+ 				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+				
+				<field id="groupid" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="multiselect">
+					<label>Customer Group Id for Trade Customer</label>
+					<source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+ 				</field> 
+ 				
+				<field id="pricelist" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="300" translate="label" type="select">
+					<label>Select Price List</label>
+					<comment>Please select brightpearl price list if not defined it takes default 3 for retail</comment>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allpricelist</source_model>
+				</field>
+				
+				<field id="currency" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="310" translate="label" type="select">
+					<label>Select Default Currency</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbpcurrencylist</source_model>
+				</field>
+				
+				
+				<field id="tradestatus" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>Trade Status</label>
+					
+ 				</field> 
+ 				
+				<field id="contacttags" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="select">
+					<label>Trade Contact Tags Id</label>
+					<comment/>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Alltags</source_model>
+				</field>
+				
+				<field id="taxmapping" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="textarea">
+					<label>Trade Customer Tax Mapping</label>
+					<comment>put customer tax mapping in from "Country_code_1:Group_Id_1:VAT_Id_1#Country_code_2:Group_Id_2:VAT_Id_2"</comment>
+				</field>
+				
+				<field id="customerpoststartdate" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="700" translate="label" type="date">
+					<label>Customer Post Starting Date</label>
+					<comment>skip old customer older then configure date</comment>
+					<frontend_model>Bsitc\Brightpearl\Block\Adminhtml\System\Config\Date</frontend_model>
+ 				</field>
+				
+				
+  
+			</group>				
+			
+			<group id="thirdpartyapp" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="6000" translate="label">
+			
+				<label>Third Party App Integration</label>
+				
+ 				<field id="app_url" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="text">
+					<label>Third Party App URL</label>
+ 				</field> 
+ 				
+				<field id="pushorderporelation" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="select">
+					<label>Push PO Order link Items to Third Party App</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+								
+				<field id="max_hours_in_queue" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="text">
+					<label>Reprocess Stuck Third Party Order queue in Hours</label>
+ 				</field> 
+
+				<field id="podecreasereminder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="select">
+					<label>Decrease PO Reminder From Third Party Post</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>URL for process Post request : /brightpearl/index/tporders</comment>
+				</field>
+				
+  
+			</group>				
+			
+			
+			<group id="tradefreeshipping" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="7000" translate="label">
+			
+				<label>Trade Customer Free Shipping</label>
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+				
+				<field id="groupid" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="multiselect">
+					<label>Customer Group Id for Trade Customer</label>
+					<source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+ 				</field> 
+ 				
+				
+				<field id="category" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="textarea">
+					<label>Free Shipping Category</label>
+					<comment>Enter comma separated category id. Ex.: "id-1, id-2, id-3"</comment>
+				</field>
+   
+			</group>
+			
+			
+			<group id="builders" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="8000" translate="label">
+			
+				<label>Builder Configuration</label>
+				
+				<field id="enable_fabric_stock" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Show Stock status based on fabric SKU</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>		
+				
+				
+				<field id="attribute_set" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="multiselect">
+					<label>Select Bundle Product Attribute set for Builders (Curtain and Blind)</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\AllAttibutesSets</source_model>
+					<comment/>
+				</field>		
+				
+				<field id="instockmsg" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="250" translate="label" type="text">
+					<label>Default In Stock Message for Builder</label>
+				</field>
+				
+				<field id="curtain_prfix" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="text">
+					<label>Prefix For Curtain SKUs</label>
+				</field>
+				
+				<field id="blind_prfix" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>Prefix For Blind SKUs</label>
+				</field>
+				
+				<field id="furniture_prfix" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="text">
+					<label>Prefix For Furniture SKUs</label>
+				</field>
+				
+				<field id="carpets_prfix" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="510" translate="label" type="text">
+					<label>Prefix For Carpets SKUs</label>
+				</field>
+				
+				<field id="runners_prfix" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="520" translate="label" type="text">
+					<label>Prefix For Runners SKUs</label>
+				</field>
+				
+				<field id="rugs_prfix" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="530" translate="label" type="text">
+					<label>Prefix For Rugs SKUs</label>
+				</field>
+
+
+				<field id="enable_builder_stock" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="540" translate="label" type="select">
+					<label>Enable builder stock from below Warehouse</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+
+				<field id="buildersstock_attribute_set" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="545" translate="label" type="multiselect">
+					<label>Select Product Attribute set for builders stock</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\AllAttibutesSets</source_model>
+					<comment/>
+				</field>		
+ 
+				<field id="stockwarehouseforbuilder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="550" translate="label" type="select">
+					<label>Select Warehouse to manage stock for Builder item</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Allbpwarehouse</source_model>
+					<comment>Show the stock for builder items if they have in above Warehouse instead of default stock</comment>
+				</field>
+
+				<field id="stockwarehousemsg" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="560" translate="label" type="text">
+					<label>Default In Stock Message for above Stock Warehouse products</label>
+				</field>
+				
+
+			</group>
+			
+			<group id="dotmailer" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="9000" translate="label">
+			
+				<label>Dotmailer API Configuration</label>
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+
+				<field id="api_url" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="200" translate="label" type="text">
+					<label>API URL</label>
+				</field>
+				
+				<field id="api_username" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="text">
+					<label>API Username</label>
+				</field>
+				
+				<field id="api_password" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="400" translate="label" type="text">
+					<label>API Password</label>
+				</field>
+				
+				<field id="address_book_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="500" translate="label" type="text">
+					<label>Dotmailer Address Book ID</label>
+					<comment>Define the address book id in which you want to create the customer after place the order</comment>
+				</field>
+				
+				<field id="programid" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="600" translate="label" type="text">
+					<label>Dotmailer Program Enrolment ID</label>
+					<comment>Define the program enrolment id in which you want to add the customer</comment>
+				</field>
+				
+			</group>
+
+			
+			<group id="flagorder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10000" translate="label">
+			
+				<label>Flag Special SKU Order Configuration</label>
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="flagskus" translate="label comment" type="textarea" sortOrder="200" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>SKU for flag the order</label>
+					<comment>Ex. SKU1#SKU2#SKU3</comment>
+                </field>
+				
+				<field id="flagsorderstatus" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="300" translate="label" type="select">
+					<label>Select Special SKU Order Status</label>
+					<source_model>Bsitc\Brightpearl\Model\Config\Source\Sostatus</source_model>
+				</field>
+ 				
+			</group>
+
+			
+			<group id="segmetrics" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10000" translate="label">
+
+				<label>Segmetrics Configuration</label>
+				
+				<field id="enable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+				
+				<field id="integration_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="20" translate="label" type="text">
+					<label>Integration ID</label>
+					<comment/>
+				</field>
+				
+				<field id="account_id" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="30" translate="label" type="text">
+					<label>Account Id</label>
+					<comment/>
+				</field>
+				
+				<field id="api_key" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="40" translate="label" type="text">
+					<label>API Key</label>
+					<comment/>
+				</field>
+
+				<field id="post_customers" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="50" translate="label" type="select">
+					<label>Post Customers</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>	
+
+				<field id="post_orders" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="60" translate="label" type="select">
+					<label>Post Orders</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="delete_orders" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="70" translate="label" type="select">
+					<label>Delete Cancel Orders from segmetric</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			
+				<field id="show_response_data_customer" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="80" translate="label" type="select">
+					<label>Show Customer Response Data in Report</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>				
+				
+				
+				<field id="show_response_data_order" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="90" translate="label" type="select">
+					<label>Show Order Response Data in Report</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				
+				<field id="cronjob_processfailed_segmetric_order_customer" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="100" translate="label" type="text">
+					<label>Retry Failed Order and Customer Job</label>
+					<comment>Retry Failed Order and Customer Job Ex. : */30 * * * *</comment>
+ 				</field> 
+				
+			</group>
+		
+			
+			
+		</section>
+	</system>
+</config>

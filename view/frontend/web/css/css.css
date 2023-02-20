@@ -1,0 +1,346 @@
+/* module css */
+.product-info-main .product-info-price .normal-price .price-label { display: block!important; float: left; padding-right: 5px; }
+.how-to-measure.trial_at_home_box { position: relative;}
+.trial_at_home_box .accordion.contact { right: 0px; bottom: 0px!important; }
+.trial_at_home_box .content { border: 1px solid #000; font-size: 14px; line-height: 19px; padding: 15px 10px; margin: 0 0 34px; background: #fff; position: absolute; top: 29px; z-index: 100; text-align: left!important; right: 0;}
+.trial_at_home_box .tahTitle {cursor: pointer; text-decoration: underline; font-size: 14px; line-height: 19px;}
+#algolia-searchbox { position: initial!important; }
+.block.block-search { display: none!important; }
+/* -------------  top menu css -----------------*/
+
+@media all and (min-width:768px) {
+	.navigation li.level0.parent.ui-menu-item > a { font: 390 13px/19px 'Brandon Grotesque',georgia,times,serif!important; letter-spacing: 2.4px; margin-bottom:5px; line-height: 19px!important; }  
+	.navigation ul li.level0 .level-top span:hover { border-bottom: 1px solid #fff; }
+	/* .navigation li.level0>.submenu.ui-menu {display: block!important;} */
+	.navigation li.level0>.submenu:before {background: #fff!important;}
+	.navigation li.level0>.submenu:after {}
+	.navigation li.level0 .cms-holder {background: #fff!important; margin:0 0 0 0!important; width: 1440px!important; max-width:1440px!important;}
+	.navigation li.level0 .submenu be_inspired_box_1 {background: #fff!important;}
+	.navigation li.level0>.submenu{grid-template-columns:unset!important; padding: 20px 0px 0px!important;}
+	.navigation li.level0>.submenu li.level1{display:none!important;}
+	.navigation li.level0>.submenu li.level0 [data-content-type="button-item"] { max-width: 100%!important; text-align: left!important; display: block !important; width:1440px!important;}
+	.navigation li.level0>.submenu a {text-decoration: none!important; font: normal 14px/20px 'Brandon Grotesque',georgia,times,serif!important; display: block!important; text-transform: unset!important; color: #333!important; border-bottom: unset!important; letter-spacing: 0.06999999px;}
+	.navigation li.level0>.submenu a:hover { border-bottom: unset!important; color: #333!important; }
+	.navigation li.level0>.submenu h3 { color: #333!important; font: bold 13px/19px 'Brandon Grotesque',georgia,times,serif!important; text-align: left!important; margin: 0px 0px 15px 0px!important; text-transform: uppercase!important; width: 100%!important; min-height:18px; }
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper {position: relative;}
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-overlay {position: absolute!important;z-index: 9999!important;bottom: 0px!important;padding: 0px 0px 0px 0px!important;width: 100%!important;}
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper .pagebuilder-banner-button{margin:0px 0 0!important;font: normal 14px/20px 'Brandon Grotesque',georgia,times,serif!important;color: #fff!important; letter-spacing: 0.4307692px!important;}
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p{font:normal 24px/30px 'Playfair Display',georgia,times,serif!important; color: #fff!important; margin: 0px;}
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p > span {font:normal 24px/30px 'Playfair Display',georgia,times,serif!important;}
+	.be_inspired_box .be_inspired_box_1 {display: block!important; }	
+	.be_inspired_box .be_inspired_box_1 > div {display: inline-block; padding-right: 10px;}
+	.be_inspired_box .be_inspired_box_2 a {text-transform: uppercase; font: bold 13px/19px 'Brandon Grotesque',georgia,times,serif!important;}
+	.be_inspired_box .be_inspired_box_3 { display: block!important; }	
+	.be_inspired_box .be_inspired_box_3 > div { display: inline-block; padding-right: 10px;}
+	.be_inspired_box .be_inspired_box_3 p {font: normal 14px/20px 'Brandon Grotesque',georgia,times,serif!important;}
+	/*-------------------------------*/
+	.wh250 p {text-align: center; font: normal 14px/20px 'Brandon Grotesque',georgia,times,serif!important; letter-spacing: 0.06999999px; color: #333;}
+	.wh250 img {width: 250px;}
+	.wh300 img {width: 300px;}
+	.wh331 img {width: 331px;}
+	.wh200 img {width: 220px;}
+	.wh180 img {width: 180px;}
+	.navigation li.level0>.submenu .sustainability_box .pagebuilder-banner-wrapper { margin-bottom: 20px; }
+	.pagebuilder-column.desktoponly.nostyle {display: block!important;}
+	.pagebuilder-column.desktoponly.nostyle .kk-shop-banner { float: right!important; margin-left: 5%!important;}
+	.pagebuilder-column.desktoponly.nostyle .w331 {  margin-left: 2%!important;}
+	
+	.navigation li.level0>.submenu .w250 .pagebuilder-banner-wrapper { width:250px; height:250px;}
+	.navigation li.level0>.submenu .w300 .pagebuilder-banner-wrapper { width:300px; height:300px;}
+	.navigation li.level0>.submenu .w331 .pagebuilder-banner-wrapper { width:331px; height:331px;}
+	.navigation li.level0>.submenu .w220 .pagebuilder-banner-wrapper { width:220px; height:220px;}
+	.navigation li.level0>.submenu .w200 .pagebuilder-banner-wrapper { width:200px; height:200px;}
+	.navigation li.level0>.submenu .w180 .pagebuilder-banner-wrapper { width:180px; height:180px;}
+	.kk-shop-banner .pagebuilder-collage-content div { min-height: unset!important; }
+
+}
+
+/* -------- Extra large devices (large laptops and desktops, 1200px and up) ------- */
+@media only screen and (min-width:1024px) and (max-width:1400px) {
+	.navigation li.level0>.submenu { width: inherit!important; max-width: inherit!important; padding: 10px 0 0!important;}
+	.navigation li.level0 .cms-holder { margin: 0px 0px 0px 0px!important; width: 1200px!important; max-width: inherit!important; }
+	.kk-shop-banner .pagebuilder-banner-wrapper {   }
+	.kk-shop-banner .pagebuilder-banner-wrapper [data-element=content] {  }
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p{ font:normal 24px/30px 'Playfair Display',georgia,times,serif!important; }
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p>span { font:normal 24px/30px 'Playfair Display',georgia,times,serif!important; }
+	.navigation li.level0>.submenu a {font:400 12px/16px 'Brandon Grotesque',georgia,times,serif!important; padding:0 0 0 0px!important;}
+	.wh250 img {width: 210px;}
+	.be_inspired_box_1 img { width: 110px;}
+	.be_inspired_box_3 img {width: 130px;}	
+	.be_inspired_box .be_inspired_box_3>div {float:left;}
+	
+	.wh250 img {width: 210px;}
+	.wh300 img {width: 260px;}
+	.wh331 img {width: 291px;}
+	.wh200 img {width: 180px;}
+	.wh180 img {width: 140px;}
+
+	.navigation li.level0>.submenu .w250 .pagebuilder-banner-wrapper { width:210px; height:210px;}
+	.navigation li.level0>.submenu .w300 .pagebuilder-banner-wrapper { width:260px; height:260px;}
+	.navigation li.level0>.submenu .w331 .pagebuilder-banner-wrapper { width:291px; height:291px;}
+	.navigation li.level0>.submenu .w220 .pagebuilder-banner-wrapper { width:220px; height:220px;}
+	.navigation li.level0>.submenu .w200 .pagebuilder-banner-wrapper { width:180px; height:180px;}
+	.navigation li.level0>.submenu .w180 .pagebuilder-banner-wrapper { width:140px; height:140px;}
+ 	
+}
+/* -------- Extra large devices (large laptops and desktops, 1000px and up) ------- */
+@media only screen and (min-width:1000px) and (max-width:1199px) {
+	.navigation li.level0>.submenu { width: inherit!important; max-width: inherit!important; padding: 10px 0 0!important;}
+	.navigation li.level0 .cms-holder { margin: 0px 0px 0px 0px!important; width: 1000px!important; max-width: inherit!important; }
+	.wh250 img {width: 180px;}
+	.wh300 img {width: 230px;}
+	.wh331 img {width: 261px;}
+	.wh200 img {width: 150px;}
+	.wh180 img {width: 110px;}
+	.navigation li.level0>.submenu .w250 .pagebuilder-banner-wrapper { width:180px; height:180px;}
+	.navigation li.level0>.submenu .w300 .pagebuilder-banner-wrapper { width:230px; height:230px;}
+	.navigation li.level0>.submenu .w331 .pagebuilder-banner-wrapper { width:261px; height:261px;}
+	.navigation li.level0>.submenu .w220 .pagebuilder-banner-wrapper { width:190px; height:190px;}
+	.navigation li.level0>.submenu .w200 .pagebuilder-banner-wrapper { width:150px; height:150px;}
+	.navigation li.level0>.submenu .w180 .pagebuilder-banner-wrapper { width:110px; height:110px;}
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p{ font:normal 24px/30px 'Playfair Display',georgia,times,serif!important; }
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p>span { font:normal 24px/30px 'Playfair Display',georgia,times,serif!important; }
+	.wh250 .pagebuilder-banner-wrapper [data-element=content] {min-height: 25px;}
+	.wh300 .pagebuilder-banner-wrapper [data-element=content] {min-height: 50px;}
+	.wh331 .pagebuilder-banner-wrapper [data-element=content] {min-height: 50px;}
+	.wh200 .pagebuilder-banner-wrapper [data-element=content] {min-height: 25px;}
+	.wh180 .pagebuilder-banner-wrapper [data-element=content] {min-height: 25px;}
+	.be_inspired_box_1 img { width: 90px;}
+	.be_inspired_box_3 img {width: 110px;}	
+
+}
+
+
+/* ----------- iPad Pro Portrait ----------- */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait){
+	.navigation li.level0 .cms-holder { margin: 0px 0px 0px 0px!important; width: 1000px!important; max-width: inherit!important; }
+}
+/* ----------- iPad Pro Landscape ----------- */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+	.navigation li.level0 .cms-holder { margin: 0px 0px 0px 0px!important; width: 1200px!important; max-width: inherit!important; }
+}
+/* ----------- iPad Normal portrait ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.navigation li.level0 .cms-holder { max-width:768px!important;}
+	.navigation li.level0>.submenu{grid-template-columns:unset!important; padding: 10px 0px 0px!important;}
+	.navigation li.level0>.submenu li.level1{display:none!important;}
+	.navigation li.level0>.submenu a {font: normal 12px/16px 'Brandon Grotesque',georgia,times,serif!important; padding:0 0 0px!important;}
+	.navigation li.level0>.submenu h3 { font: bold 12px/16px 'Brandon Grotesque',georgia,times,serif!important; }
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p {font: normal 20px/24px 'Playfair Display',georgia,times,serif!important;}
+	.navigation li.level0>.submenu .kk-shop-banner .pagebuilder-banner-wrapper p > span {font: font: normal 20px/24px 'Playfair Display',georgia,times,serif!important;}
+	.kk-shop-banner .pagebuilder-banner-wrapper{min-height: 200px!important;}
+	.kk-shop-banner .pagebuilder-banner-wrapper p{ font: normal 20px/24px 'PlayfairDisplay-Regular_Bold',georgia,times,serif!important; color: #fff!important;}
+	.kk-shop-banner .pagebuilder-banner-wrapper .pagebuilder-banner-button{ padding:5px 10px!important; font: normal 12px/14px 'Brandon Grotesque',georgia,times,serif!important; color: #fff!important; }
+	.spaces_box .pagebuilder-poster-content {padding: 5px;}
+	.be_inspired_box .be_inspired_box_1 {display: block!important; }	
+	.be_inspired_box .be_inspired_box_1 > div {display: inline-block; padding-right: 10px; width: 45%!important;}
+	.be_inspired_box .be_inspired_box_2 a {text-transform: uppercase; font: bold 12px/16px 'Brandon Grotesque',georgia,times,serif!important;}
+	.be_inspired_box .be_inspired_box_2 a > span {margin:0px!important;}
+	.be_inspired_box .be_inspired_box_3 { display: block!important; }	
+	.be_inspired_box .be_inspired_box_3 > div { display: inline-block; padding-right: 10px; width: 45%!important; float: right;}
+	.be_inspired_box .be_inspired_box_3 p {font: normal 12px/16px 'Brandon Grotesque',georgia,times,serif!important;}
+}
+
+/* ----------- mobile ----------- */
+@media only screen and (max-width: 767px) { 
+	.kk-shop-banner {display:none;}
+	.navigation li.level0 .cms-holder h2 {display:none;}
+	.navigation li.level0>.submenu h3 {font: bold 13px/19px 'Brandon Grotesque',georgia,times,serif!important; text-transform: uppercase; }
+	.navigation li.level0>.submenu .pagebuilder-button-link span{ font: normal 14px/19px 'Brandon Grotesque',georgia,times,serif!important; }
+	.page-header .nav-sections .navigation ul li .level0.submenu a { text-decoration: none!important; font: normal 14px/19px 'Brandon Grotesque',georgia,times,serif!important; text-transform: unset!important; color: #333!important; }
+	.spaces_box .pagebuilder-poster-content p {text-align: left!important; font: normal 14px/19px 'Brandon Grotesque',georgia,times,serif!important;}
+	.be_inspired_box .pagebuilder-poster-content p {text-align: left!important;}
+	.page-header .nav-sections .navigation {margin: 0 0 10px!important;}
+	.page-header .nav-sections .navigation ul li .level0.submenu li { padding: 0px 20px!important;}
+	.page-header .nav-sections .navigation ul li .desktoponly {display: none!important; height: 0px!important; padding: 0px!important; margin: 0px!important;}
+	.pagebuilder-column { padding: 0px!important;}
+	.wh250 img {display: none;}
+	.wh300 img {display: none;}
+	.wh331 img {display: none;}
+	.wh180 img {display: none;}
+ 
+} 
+
+/* ----------- mobile - fixed the padding issue on home page ----------- */
+@media only screen and (max-width: 767px) { 
+	.cms-home #maincontent { padding: 0 0px!important;}
+} 
+
+
+/* ----------- mobile - fixed the swatches img missing in iphone 8 ----------- */
+@media only screen and (max-width: 767px) { 
+	.filter-content .filter-options .filter-options-content {font-size: 12px!important;}
+}
+
+/* ----------- mobile - add images or dot for product gallery section ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+	.product.media .fotorama__nav-wrap {display: block !important;}
+	.product.media .fotorama__nav-wrap .fotorama__thumb__arr { display: block !important;}
+	.product.media .fotorama__nav-wrap .fotorama__nav__shaft { text-align: center; padding: 0; margin: 0px 0px 0px -15px; width: 100%; }
+	.product.media .fotorama__nav-wrap .fotorama__nav__shaft .fotorama__nav__frame { float: initial!important; width: 5%!important; height: 30px !important; margin-left: 15px!important;}	
+	.product.media .fotorama__nav-wrap .fotorama__nav__shaft .fotorama__nav__frame.fotorama__active {display: inline-block!important;}
+	.fotorama__nav__frame .fotorama__thumb {display:none;} 
+}
+
+/* ----------- mobile - fixed the swatches img missing in iphone 8 ----------- */
+@media only screen and (max-width: 767px) { 
+	.filter-content .filter-options .filter-options-content {font-size: 12px!important;}
+} 
+
+/* ----------- mobile - iPhone 8  ----------- */
+@media only screen and (max-width: 767px) {
+	#layered-filter-block-container .filter-content .filter-options-item .filter-options-content .swatch-attribute-options .swatch-option{
+	position: initial;
+	}
+}
+
+/* -------------------- different mobile menu -------------------------------- */
+	.navigation li.level0 .cms-holder .desktop_only { display:block!important;}
+	.navigation li.level0 .cms-holder .mobile_only { display:none!important;}
+	@media only screen and (max-width: 767px) { 
+		.navigation li.level0 .cms-holder .desktop_only { display:none!important;}
+		.navigation li.level0 .cms-holder .mobile_only { display:block!important;}
+	}
+/* -------------------- different mobile menu -------------------------------- */
+
+/* -------------------- fixed the mobile serch box issue ---------------------- */
+#inputSearchSnrs.active {
+    z-index: 999!important;
+}
+
+/* -------- Extra large devices Macbook: 2560x1600 css  ------- */
+@media all and (min-width:768px) {
+	.block.bcorp { margin-right: 100px; }
+	.page-footer .footer-bottom .right a:last-child {margin-right:90px!important;  }
+}
+
+/* ----------- mobile - fixed the issue in iphone 8 ----------- */
+@media only screen and (max-width: 767px) { 
+	.filter-content .filter-options .filter-options-item .filter-options-title {min-width: 90px!important;}
+} 
+
+/* ----------- mobile - fixed the london space issue in mobile ----------- */
+
+.bottom-buttons-frame { right: 25px!important; bottom: 31px!important; }
+
+/* -----------  fixed the store switcher issue that due to header.less not working properly  ----------- */
+
+@media all and (min-width:768px) {
+.page-header .switcher {display: inline-block; margin-right: 10px;}
+.page-header .switcher .label { border: 0; clip: rect(0,0,0,0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; font-weight: 400; }
+.header .switcher .options { position: static; display: inline-block;}
+.page-header .switcher .options:before {content: '';display: table;}
+.page-header .switcher .options .action.toggle {padding: 0; cursor: pointer; display: inline-block; text-decoration: none; }
+.page-header .switcher .options .action.toggle.active { display: inline-block; text-decoration: none; }
+.page-header .switcher strong{ font-weight: 400; }
+.page-header .switcher .options .action.toggle.active span, .page-header .switcher .options .action.toggle span { margin: 0 4px 0 0; font-weight: 400;}
+.page-header .switcher .options ul.dropdown { list-style: none none; background: #fff; border: 1px solid #bbb; z-index: 100; box-sizing: border-box; display: none;  position: absolute; top: 100%; box-shadow: 0 3px 3px rgb(0 0 0 / 15%); }
+.page-header .switcher .options:after { clear: both; content: ''; display: table; }
+.page-header .switcher .switcher-trigger i.fal.fa-chevron-down { display: none; }
+.page-header .switcher-currency {display: none!important;}
+.page-header .switcher .options.active ul.dropdown  { display: block;  }
+}
+
+/* -----------  fixed the relative items  ----------- */
+.product-info-main .block.related .content .product-items .product-item-photo { overflow: hidden; display: flex!important;}
+/* -----------  fixed the list items  ----------- */
+.product-item-photo { display: flex!important; overflow: hidden; }
+#shopping-cart-table .product-item-photo { display: table-cell!important;   }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+	
+	.categorypath-spaces-london .category-view { display:none!important;}
+	.categorypath-spaces-london .breadcrumbs {margin-bottom: 15px!important; margin-top: 15px!important;}
+	.categorypath-spaces-london #maincontent .columns { display:none!important;}
+
+	.cms-castle-of-trematon-experience .page-title { margin : 0px 0 10px!important;}
+	.cms-castle-of-trematon-experience .breadcrumbs { margin-bottom: 15px!important; margin-top: 15px!important; margin-left: 15px!important; }
+
+	.categorypath-spaces-london .cms-top-banner .text-holder {background: #fff!important;}
+	
+}
+
+
+.block.bcorp img { max-height: 140px!important; }
+.queen-mobile {display: none;}
+
+@media screen and (max-width: 768px) {
+	.queen-desk {display: none;}
+	.queen-mobile {display: block;}
+}
+
+
+.page-header .switcher .options, .page-footer .switcher .options { display: inline-block; position: relative; }
+.page-header .switcher .options:before { content: ''; display: table; }
+.page-header .col-left .switcher-store .options .action.toggle { color: #fff; display: block; padding: 16px 0 16px 35px; position: relative;  }
+.page-header .switcher-store strong.label.switcher-label { border: 0; clip: rect(0,0,0,0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;}
+.page-header .switcher .options .action.toggle.active span, .page-header .switcher .options .action.toggle span { margin: 0 4px 0 0;}
+.page-header .switcher .options ul.dropdown { padding: 0; list-style: none none; background: #fff; border: 1px solid #bbb; min-width: 160px; z-index: 100; box-sizing: border-box; display: none; position: absolute; top: 100%; box-shadow: 0 3px 3px rgb(0 0 0 / 15%); }
+.page-header .switcher .options.active ul.dropdown  { display: block;  }
+.page-header .col-left .switcher-store .options .switcher-option { display: flex; margin-bottom : 0px!important;}
+
+@media screen and (max-width: 768px) {
+	#layered-filter-block .filter-content .filter-options-item.active [aria-hidden=false]{display: none!important;}
+
+}
+
+.pagebuilder-banner-wrapper [data-element=content] {
+    overflow: hidden!important;
+}
+
+
+
+/* ---- fabric builder link button design ----- */
+.fcb_box { display: block; overflow: hidden; margin: -25px 0 5px 0px!important;}
+ul.product-calculator-buttons { display: block; width: 100%; height: initial; padding: 0; overflow: hidden; float: right; margin: 0;margin-bottom: 0; }
+ul.product-calculator-buttons>li { list-style: none; padding-left: 15px; margin: 0; float: right; }
+a.action.fabric_curtain_link.secondary{ display: inline-block; font-size: 14px!important; cursor: pointer; padding: 5px 0px 2px; line-height: 19px; color: #000; text-decoration: underline; border: none!important;}
+
+/* ----------- Mobile CMS page missing images  ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+	figure[data-content-type=image] { margin: 0px!important; }
+}
+
+.attribute-set-lighting #product_addtocart_form .bundle-summary { display: none; }
+.attribute-set-lighting #product_addtocart_form .bundle-info .price-configured_price { display: none; }
+
+
+
+/* ----------- Top menu hover css   ----------- */
+.navigation ul li.level0.parent>.level-top:hover{ background: #fff; color: #000!important;}
+.navigation ul li.level0.parent>.level-top:active{ background: #fff; color: #000!important;}
+.navigation ul li.level0:hover { background: #fff;} 
+.navigation ul li a.ui-state-active { background: #fff; color: #000!important; }
+.navigation ul li.level0:active { background: #fff; color: #000!important; }
+
+/* ---- sample text line ----- */
+	.sample-product-info { padding: 0 0 10px; font-size: 14px; line-height: 19px; }
+	.sample-product-info strong { text-decoration: underline; }
+	.product-info-main #product_addtocart_form .box-tocart .actions .action { margin: 0 0 0 5px !important; }
+	.paint_calculator_page .sample-product-info { padding: 10px 0 11px 20px!important; }
+	.catalog-product-view .wk-msg-box { padding: 0 0 15px !important; }
+/* ---- sample text line ----- */
+
+/* ----------- mobile fixed the order sample price design ----------- */
+@media only screen and (max-width: 767px) { 
+	.product-info-main #product_addtocart_form .box-tocart .field.qty label { font-size: 11px; }
+	.product-info-main #product_addtocart_form .box-tocart .field .input-text.qty { width: 35px; padding: 9px 2px 10px; font-size: 12px;}
+	.product-info-main #product_addtocart_form .box-tocart .actions .action { padding: 9px 0px 10px; }
+	.product-info-main #product_addtocart_form .box-tocart .actions .action.secondary { padding: 10px 0px 7px!important; font-size: 11px!important;}
+	.product-info-main #product_addtocart_form .box-tocart .actions .action { font-size: 11px!important;}
+	.product-info-main #product_addtocart_form .paint-tocart .sample-tocart-actions-wrapper { width: 70%!important;}
+	.product-info-main #product_addtocart_form .paint-tocart .tocart-actions-wrapper { width: 70%!important; margin-bottom: 10px;}
+	
+	.product-info-main .bundle-options-container .block-bundle-summary { padding: 8px!important;  }
+	.product-info-main .bundle-options-container .bundle-info { padding: 2px!important;  }
+	.product-info-main .bundle-options-container .bundle-info .box-tocart .field .input-text.qty {width: 30px!important;  padding: 9px 0px 10px!important;  font-size: 11px!important; }
+	.product-info-main .bundle-options-container .bundle-info .box-tocart .actions .action { margin: 0 0 0 2px!important; font-size: 11px!important; }
+	.product-info-main .bundle-options-container .bundle-info .box-tocart .actions .action.towishlist { min-width: 35px!important;  flex: 0 1 35px!important;  }		
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+	.product-info-main .bundle-options-container .bundle-info .box-tocart .actions .action.secondary { font-size: 8px!important; }
+}
+
+/* ----------- mobile fixed the order sample price design ----------- */

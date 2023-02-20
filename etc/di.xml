@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   
+	<type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+       <plugin name="bsitc_checkout_custom_shipping_fields" type="Bsitc\Brightpearl\Plugin\Checkout\LayoutProcessorPlugin" sortOrder="10"/>
+   </type>
+   
+   
+   
+  
+   <type name="Magento\Checkout\Model\ShippingInformationManagement">
+      <plugin name="bsitc_save_to_quote_table" type="Bsitc\Brightpearl\Plugin\Quote\SaveToQuote" sortOrder="10"/>
+   </type>
+   
+   
+    <!--Start Write Commands for first time product data fetch-->
+    <type name="Magento\Framework\Console\CommandList">
+       <arguments>
+           <argument name="commands" xsi:type="array">
+               <item name="exampleSayHello" xsi:type="object">Bsitc\Brightpearl\Console\ExportProductFromBp</item>
+           </argument>
+       </arguments>
+   </type>
+   <!--Ends Write Commands for first time product data fetch-->
+
+	<type name="Magento\Framework\App\Request\CsrfValidator">
+		<plugin name="csrf_validator_skip" type="Bsitc\Brightpearl\Plugin\CsrfValidatorSkip" sortOrder="10" />
+	</type> 
+	
+    <!-- plugin to pass custom filed values from quote item to order item. -->
+
+	<type name="Magento\Quote\Model\Quote\Item\ToOrderItem">
+		<plugin name="dropdown_attribute_quote_to_order_item" type="Bsitc\Brightpearl\Plugin\AttributeQuoteToOrderItem"/>
+	</type>
+	
+    <!-- plugin to append custom message in shipping method title  -->
+
+	<type name="Magento\Quote\Model\Cart\ShippingMethodConverter">
+        <plugin name="add_transittime" type="Bsitc\Brightpearl\Plugin\Transittime" disabled="false" sortOrder="30"/>
+    </type>	
+	
+	
+	<!-- <type name="Magento\Shipping\Model\Rate\Result">
+		<plugin name="update_rate_result" type="Bsitc\Brightpearl\Plugin\Shipping\Append" sortOrder="10" disabled="false"/>
+		<plugin name="disabled_or_enabled_rates" type="Bsitc\Brightpearl\Plugin\Shipping\GetAllRates" sortOrder="11" disabled="false"/>
+	</type>	 -->	
+	<!-- <preference for="Magento\Shipping\Model\Rate\Result" type="Bsitc\Brightpearl\Model\Shipping\Rate\Result" /> -->
+	
+	<type name="Magento\Quote\Model\ShippingMethodManagement">
+        <plugin name="bsitc_shipping_method_management" type="Bsitc\Brightpearl\Plugin\Model\ShippingMethodManagement" disabled="false"/>
+    </type>
+	
+    <type name="Magento\Company\Controller\Account\CreatePost">
+        <plugin name="DisableNewsletterSubscriptionPlugin" type="Bsitc\Brightpearl\Plugin\Company\CreatePost" sortOrder="100" disabled="false"/>
+    </type>
+	
+	
+	<type name="Magento\Checkout\Model\Cart">
+		<plugin name="prevent_add_to" type="Bsitc\Brightpearl\Plugin\BeforeAddToCart"/>
+	</type>
+	
+	
+	<type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+		<plugin name="bsitc_implementorderbysortoptions" type="Bsitc\Brightpearl\Plugin\Product\ProductList\Toolbar" />
+	</type>	
+	
+	
+
+</config>

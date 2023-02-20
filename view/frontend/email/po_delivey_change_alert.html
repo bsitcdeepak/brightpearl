@@ -1,0 +1,14 @@
+<!--@subject {{var subject|raw }} @-->
+  
+{{template config_path="design/email/header_template"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+     <tr class="email-intro">
+        <td class="action-content">
+            <h3>Dear {{var customer_name}},</h3>
+             <p>Unfortunately the expected delivery date for product {{var product_name}} (SKU: {{var product_sku}} ) has changed. The date we gave you when you placed your order #{{var order.increment_id}} was {{var old_date}}. The revised date is {{var new_date}}.  Sorry for the inconvenience. </p>
+         </td>
+     </tr>
+ </table>
+  
+{{template config_path="design/email/footer_template"}}
