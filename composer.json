@@ -2,14 +2,14 @@
     "name": "bsitc/module-brightpearl",
     "description": "",
     "type": "magento2-module",
+	"version": "4.0.0",
     "license": "proprietary",
     "authors": [
         {
             "email": "kai@businesssolutionsinthecloud.com",
             "name": "BSITC"
         }
-    ],
-    "minimum-stability": "dev",
+    ],   
     "require": {},
     "autoload": {
         "files": [
