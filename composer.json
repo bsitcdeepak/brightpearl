@@ -2,7 +2,7 @@
     "name": "bsitc/module-brightpearl",
     "description": "",
     "type": "magento2-module",
-	"version": "4.0.0",
+	"version": "2.0.5",
     "license": "proprietary",
     "authors": [
         {
